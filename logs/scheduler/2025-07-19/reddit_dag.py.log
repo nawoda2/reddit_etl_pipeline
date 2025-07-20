@@ -1,0 +1,1446 @@
+[2025-07-19T23:27:16.175+0000] {processor.py:157} INFO - Started process (PID=33) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:27:16.176+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:27:16.177+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:27:16.177+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:27:16.202+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:27:16.195+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 4, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+ModuleNotFoundError: No module named 'pipelines'
+[2025-07-19T23:27:16.203+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:27:16.240+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.069 seconds
+[2025-07-19T23:27:46.458+0000] {processor.py:157} INFO - Started process (PID=34) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:27:46.459+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:27:46.461+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:27:46.460+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:27:46.485+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:27:46.479+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 4, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+ModuleNotFoundError: No module named 'pipelines'
+[2025-07-19T23:27:46.487+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:27:46.516+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.066 seconds
+[2025-07-19T23:28:16.626+0000] {processor.py:157} INFO - Started process (PID=35) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:28:16.627+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:28:16.628+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:28:16.628+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:28:16.647+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:28:16.643+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 4, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+ModuleNotFoundError: No module named 'pipelines'
+[2025-07-19T23:28:16.649+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:28:16.686+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.064 seconds
+[2025-07-19T23:28:46.837+0000] {processor.py:157} INFO - Started process (PID=36) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:28:46.838+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:28:46.840+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:28:46.839+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:28:46.857+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:28:46.853+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 4, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+ModuleNotFoundError: No module named 'pipelines'
+[2025-07-19T23:28:46.858+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:28:46.889+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.055 seconds
+[2025-07-19T23:29:17.203+0000] {processor.py:157} INFO - Started process (PID=37) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:29:17.203+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:29:17.205+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:29:17.204+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:29:17.225+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:29:17.221+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 4, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+ModuleNotFoundError: No module named 'pipelines'
+[2025-07-19T23:29:17.226+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:29:17.251+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.053 seconds
+[2025-07-19T23:29:47.370+0000] {processor.py:157} INFO - Started process (PID=38) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:29:47.371+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:29:47.372+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:29:47.372+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:29:47.388+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:29:47.384+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 4, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+ModuleNotFoundError: No module named 'pipelines'
+[2025-07-19T23:29:47.389+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:29:47.410+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.045 seconds
+[2025-07-19T23:30:17.554+0000] {processor.py:157} INFO - Started process (PID=39) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:30:17.555+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:30:17.556+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:30:17.555+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:30:17.572+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:30:17.568+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 4, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+ModuleNotFoundError: No module named 'pipelines'
+[2025-07-19T23:30:17.573+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:30:17.598+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.047 seconds
+[2025-07-19T23:30:47.721+0000] {processor.py:157} INFO - Started process (PID=40) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:30:47.722+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:30:47.722+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:30:47.722+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:30:47.737+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:30:47.734+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 4, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+ModuleNotFoundError: No module named 'pipelines'
+[2025-07-19T23:30:47.739+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:30:47.764+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.047 seconds
+[2025-07-19T23:31:17.899+0000] {processor.py:157} INFO - Started process (PID=41) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:31:17.900+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:31:17.900+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:31:17.900+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:31:17.918+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:31:17.914+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 4, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+ModuleNotFoundError: No module named 'pipelines'
+[2025-07-19T23:31:17.919+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:31:17.943+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.048 seconds
+[2025-07-19T23:31:48.061+0000] {processor.py:157} INFO - Started process (PID=42) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:31:48.061+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:31:48.062+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:31:48.062+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:31:48.076+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:31:48.073+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 4, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+ModuleNotFoundError: No module named 'pipelines'
+[2025-07-19T23:31:48.077+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:31:48.100+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.043 seconds
+[2025-07-19T23:32:18.267+0000] {processor.py:157} INFO - Started process (PID=43) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:32:18.267+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:32:18.268+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:32:18.268+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:32:18.284+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:32:18.280+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 4, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+ModuleNotFoundError: No module named 'pipelines'
+[2025-07-19T23:32:18.285+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:32:18.312+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.048 seconds
+[2025-07-19T23:32:29.375+0000] {processor.py:157} INFO - Started process (PID=44) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:32:29.376+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:32:29.377+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:32:29.377+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:32:29.402+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:32:29.398+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 7, in <module>
+    sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+NameError: name 'os' is not defined
+[2025-07-19T23:32:29.403+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:32:29.430+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.061 seconds
+[2025-07-19T23:32:59.550+0000] {processor.py:157} INFO - Started process (PID=45) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:32:59.551+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:32:59.553+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:32:59.552+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:32:59.566+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:32:59.563+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 7, in <module>
+    sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+NameError: name 'os' is not defined
+[2025-07-19T23:32:59.567+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:32:59.591+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.045 seconds
+[2025-07-19T23:33:07.660+0000] {processor.py:157} INFO - Started process (PID=46) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:33:07.661+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:33:07.663+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:33:07.662+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:33:07.726+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:33:07.716+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/configparser.py", line 789, in get
+    value = d[option]
+  File "/usr/local/lib/python3.9/collections/__init__.py", line 941, in __getitem__
+    return self.__missing__(key)            # support subclasses that define __missing__
+  File "/usr/local/lib/python3.9/collections/__init__.py", line 933, in __missing__
+    raise KeyError(key)
+KeyError: 'reddit_sercret'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 8, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 1, in <module>
+    from utils.constants import CLIENT_ID, SECRET
+  File "/opt/airflow/utils/constants.py", line 8, in <module>
+    SECRET = parser.get('api_keys', 'reddit_sercret')
+  File "/usr/local/lib/python3.9/configparser.py", line 792, in get
+    raise NoOptionError(option, section)
+configparser.NoOptionError: No option 'reddit_sercret' in section: 'api_keys'
+[2025-07-19T23:33:07.728+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:33:07.752+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.095 seconds
+[2025-07-19T23:33:37.827+0000] {processor.py:157} INFO - Started process (PID=47) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:33:37.828+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:33:37.830+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:33:37.830+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:33:37.868+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:33:37.860+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/configparser.py", line 789, in get
+    value = d[option]
+  File "/usr/local/lib/python3.9/collections/__init__.py", line 941, in __getitem__
+    return self.__missing__(key)            # support subclasses that define __missing__
+  File "/usr/local/lib/python3.9/collections/__init__.py", line 933, in __missing__
+    raise KeyError(key)
+KeyError: 'reddit_sercret'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 8, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 1, in <module>
+    from utils.constants import CLIENT_ID, SECRET
+  File "/opt/airflow/utils/constants.py", line 8, in <module>
+    SECRET = parser.get('api_keys', 'reddit_sercret')
+  File "/usr/local/lib/python3.9/configparser.py", line 792, in get
+    raise NoOptionError(option, section)
+configparser.NoOptionError: No option 'reddit_sercret' in section: 'api_keys'
+[2025-07-19T23:33:37.869+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:33:37.894+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.074 seconds
+[2025-07-19T23:34:08.049+0000] {processor.py:157} INFO - Started process (PID=48) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:34:08.050+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:34:08.051+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:34:08.051+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:34:08.086+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:34:08.078+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/configparser.py", line 789, in get
+    value = d[option]
+  File "/usr/local/lib/python3.9/collections/__init__.py", line 941, in __getitem__
+    return self.__missing__(key)            # support subclasses that define __missing__
+  File "/usr/local/lib/python3.9/collections/__init__.py", line 933, in __missing__
+    raise KeyError(key)
+KeyError: 'reddit_sercret'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 8, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 1, in <module>
+    from utils.constants import CLIENT_ID, SECRET
+  File "/opt/airflow/utils/constants.py", line 8, in <module>
+    SECRET = parser.get('api_keys', 'reddit_sercret')
+  File "/usr/local/lib/python3.9/configparser.py", line 792, in get
+    raise NoOptionError(option, section)
+configparser.NoOptionError: No option 'reddit_sercret' in section: 'api_keys'
+[2025-07-19T23:34:08.087+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:34:08.109+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.062 seconds
+[2025-07-19T23:34:38.218+0000] {processor.py:157} INFO - Started process (PID=49) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:34:38.218+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:34:38.219+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:34:38.219+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:34:38.259+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:34:38.249+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/configparser.py", line 789, in get
+    value = d[option]
+  File "/usr/local/lib/python3.9/collections/__init__.py", line 941, in __getitem__
+    return self.__missing__(key)            # support subclasses that define __missing__
+  File "/usr/local/lib/python3.9/collections/__init__.py", line 933, in __missing__
+    raise KeyError(key)
+KeyError: 'reddit_sercret'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 8, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 1, in <module>
+    from utils.constants import CLIENT_ID, SECRET
+  File "/opt/airflow/utils/constants.py", line 8, in <module>
+    SECRET = parser.get('api_keys', 'reddit_sercret')
+  File "/usr/local/lib/python3.9/configparser.py", line 792, in get
+    raise NoOptionError(option, section)
+configparser.NoOptionError: No option 'reddit_sercret' in section: 'api_keys'
+[2025-07-19T23:34:38.260+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:34:38.300+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.086 seconds
+[2025-07-19T23:35:08.421+0000] {processor.py:157} INFO - Started process (PID=50) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:35:08.422+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:35:08.423+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:35:08.423+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:35:08.459+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:35:08.450+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/configparser.py", line 789, in get
+    value = d[option]
+  File "/usr/local/lib/python3.9/collections/__init__.py", line 941, in __getitem__
+    return self.__missing__(key)            # support subclasses that define __missing__
+  File "/usr/local/lib/python3.9/collections/__init__.py", line 933, in __missing__
+    raise KeyError(key)
+KeyError: 'reddit_sercret'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 8, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 1, in <module>
+    from utils.constants import CLIENT_ID, SECRET
+  File "/opt/airflow/utils/constants.py", line 8, in <module>
+    SECRET = parser.get('api_keys', 'reddit_sercret')
+  File "/usr/local/lib/python3.9/configparser.py", line 792, in get
+    raise NoOptionError(option, section)
+configparser.NoOptionError: No option 'reddit_sercret' in section: 'api_keys'
+[2025-07-19T23:35:08.461+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:35:08.481+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.064 seconds
+[2025-07-19T23:35:38.609+0000] {processor.py:157} INFO - Started process (PID=51) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:35:38.610+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:35:38.611+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:35:38.610+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:35:38.668+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:35:38.659+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 8, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 1, in <module>
+    from utils.constants import CLIENT_ID, SECRET
+  File "/opt/airflow/utils/constants.py", line 28, in <module>
+    BATCH_SIZE = parser.getint('etl_settings', 'batch_size', fallback=1000)
+  File "/usr/local/lib/python3.9/configparser.py", line 818, in getint
+    return self._get_conv(section, option, int, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 808, in _get_conv
+    return self._get(section, conv, option, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 803, in _get
+    return conv(self.get(section, option, **kwargs))
+ValueError: invalid literal for int() with base 10: ''
+[2025-07-19T23:35:38.669+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:35:38.691+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.086 seconds
+[2025-07-19T23:36:08.779+0000] {processor.py:157} INFO - Started process (PID=52) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:36:08.779+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:36:08.781+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:36:08.780+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:36:08.817+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:36:08.808+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 8, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 1, in <module>
+    from utils.constants import CLIENT_ID, SECRET
+  File "/opt/airflow/utils/constants.py", line 28, in <module>
+    BATCH_SIZE = parser.getint('etl_settings', 'batch_size', fallback=1000)
+  File "/usr/local/lib/python3.9/configparser.py", line 818, in getint
+    return self._get_conv(section, option, int, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 808, in _get_conv
+    return self._get(section, conv, option, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 803, in _get
+    return conv(self.get(section, option, **kwargs))
+ValueError: invalid literal for int() with base 10: ''
+[2025-07-19T23:36:08.818+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:36:08.874+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.099 seconds
+[2025-07-19T23:36:38.984+0000] {processor.py:157} INFO - Started process (PID=53) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:36:38.985+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:36:38.986+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:36:38.986+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:36:39.025+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:36:39.016+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 8, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 1, in <module>
+    from utils.constants import CLIENT_ID, SECRET
+  File "/opt/airflow/utils/constants.py", line 28, in <module>
+    BATCH_SIZE = parser.getint('etl_settings', 'batch_size', fallback=1000)
+  File "/usr/local/lib/python3.9/configparser.py", line 818, in getint
+    return self._get_conv(section, option, int, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 808, in _get_conv
+    return self._get(section, conv, option, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 803, in _get
+    return conv(self.get(section, option, **kwargs))
+ValueError: invalid literal for int() with base 10: ''
+[2025-07-19T23:36:39.026+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:36:39.049+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.068 seconds
+[2025-07-19T23:37:09.179+0000] {processor.py:157} INFO - Started process (PID=54) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:37:09.180+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:37:09.181+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:37:09.181+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:37:09.226+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:37:09.218+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 8, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 1, in <module>
+    from utils.constants import CLIENT_ID, SECRET
+  File "/opt/airflow/utils/constants.py", line 28, in <module>
+    BATCH_SIZE = parser.getint('etl_settings', 'batch_size', fallback=1000)
+  File "/usr/local/lib/python3.9/configparser.py", line 818, in getint
+    return self._get_conv(section, option, int, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 808, in _get_conv
+    return self._get(section, conv, option, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 803, in _get
+    return conv(self.get(section, option, **kwargs))
+ValueError: invalid literal for int() with base 10: ''
+[2025-07-19T23:37:09.227+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:37:09.250+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.074 seconds
+[2025-07-19T23:37:39.385+0000] {processor.py:157} INFO - Started process (PID=55) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:37:39.386+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:37:39.388+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:37:39.388+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:37:39.422+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:37:39.415+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 8, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 1, in <module>
+    from utils.constants import CLIENT_ID, SECRET
+  File "/opt/airflow/utils/constants.py", line 28, in <module>
+    BATCH_SIZE = parser.getint('etl_settings', 'batch_size', fallback=1000)
+  File "/usr/local/lib/python3.9/configparser.py", line 818, in getint
+    return self._get_conv(section, option, int, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 808, in _get_conv
+    return self._get(section, conv, option, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 803, in _get
+    return conv(self.get(section, option, **kwargs))
+ValueError: invalid literal for int() with base 10: ''
+[2025-07-19T23:37:39.423+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:37:39.450+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.070 seconds
+[2025-07-19T23:38:09.545+0000] {processor.py:157} INFO - Started process (PID=56) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:38:09.546+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:38:09.547+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:38:09.546+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:38:09.581+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:38:09.573+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 8, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 1, in <module>
+    from utils.constants import CLIENT_ID, SECRET
+  File "/opt/airflow/utils/constants.py", line 28, in <module>
+    BATCH_SIZE = parser.getint('etl_settings', 'batch_size', fallback=1000)
+  File "/usr/local/lib/python3.9/configparser.py", line 818, in getint
+    return self._get_conv(section, option, int, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 808, in _get_conv
+    return self._get(section, conv, option, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 803, in _get
+    return conv(self.get(section, option, **kwargs))
+ValueError: invalid literal for int() with base 10: ''
+[2025-07-19T23:38:09.582+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:38:09.604+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.063 seconds
+[2025-07-19T23:38:39.749+0000] {processor.py:157} INFO - Started process (PID=57) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:38:39.750+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:38:39.751+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:38:39.750+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:38:39.786+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:38:39.778+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 8, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 1, in <module>
+    from utils.constants import CLIENT_ID, SECRET
+  File "/opt/airflow/utils/constants.py", line 28, in <module>
+    BATCH_SIZE = parser.getint('etl_settings', 'batch_size', fallback=1000)
+  File "/usr/local/lib/python3.9/configparser.py", line 818, in getint
+    return self._get_conv(section, option, int, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 808, in _get_conv
+    return self._get(section, conv, option, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 803, in _get
+    return conv(self.get(section, option, **kwargs))
+ValueError: invalid literal for int() with base 10: ''
+[2025-07-19T23:38:39.787+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:38:39.808+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.062 seconds
+[2025-07-19T23:39:09.908+0000] {processor.py:157} INFO - Started process (PID=58) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:39:09.909+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:39:09.910+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:39:09.909+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:39:09.945+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:39:09.936+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 8, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 1, in <module>
+    from utils.constants import CLIENT_ID, SECRET
+  File "/opt/airflow/utils/constants.py", line 28, in <module>
+    BATCH_SIZE = parser.getint('etl_settings', 'batch_size', fallback=1000)
+  File "/usr/local/lib/python3.9/configparser.py", line 818, in getint
+    return self._get_conv(section, option, int, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 808, in _get_conv
+    return self._get(section, conv, option, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 803, in _get
+    return conv(self.get(section, option, **kwargs))
+ValueError: invalid literal for int() with base 10: ''
+[2025-07-19T23:39:09.945+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:39:09.967+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.063 seconds
+[2025-07-19T23:39:16.003+0000] {processor.py:157} INFO - Started process (PID=59) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:39:16.004+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:39:16.005+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:39:16.005+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:39:16.048+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:39:16.040+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 8, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 1, in <module>
+    from utils.constants import CLIENT_ID, SECRET
+  File "/opt/airflow/utils/constants.py", line 28, in <module>
+    BATCH_SIZE = parser.getint('etl_settings', 'batch_size', fallback=1000)
+  File "/usr/local/lib/python3.9/configparser.py", line 818, in getint
+    return self._get_conv(section, option, int, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 808, in _get_conv
+    return self._get(section, conv, option, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 803, in _get
+    return conv(self.get(section, option, **kwargs))
+ValueError: invalid literal for int() with base 10: ''
+[2025-07-19T23:39:16.049+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:39:16.071+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.071 seconds
+[2025-07-19T23:39:46.173+0000] {processor.py:157} INFO - Started process (PID=60) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:39:46.174+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:39:46.175+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:39:46.174+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:39:46.219+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:39:46.211+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 8, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 1, in <module>
+    from utils.constants import CLIENT_ID, SECRET
+  File "/opt/airflow/utils/constants.py", line 28, in <module>
+    BATCH_SIZE = parser.getint('etl_settings', 'batch_size', fallback=1000)
+  File "/usr/local/lib/python3.9/configparser.py", line 818, in getint
+    return self._get_conv(section, option, int, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 808, in _get_conv
+    return self._get(section, conv, option, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 803, in _get
+    return conv(self.get(section, option, **kwargs))
+ValueError: invalid literal for int() with base 10: ''
+[2025-07-19T23:39:46.220+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:39:46.241+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.071 seconds
+[2025-07-19T23:40:16.380+0000] {processor.py:157} INFO - Started process (PID=61) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:40:16.381+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:40:16.382+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:40:16.382+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:40:16.417+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:40:16.407+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 8, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 1, in <module>
+    from utils.constants import CLIENT_ID, SECRET
+  File "/opt/airflow/utils/constants.py", line 28, in <module>
+    BATCH_SIZE = parser.getint('etl_settings', 'batch_size', fallback=1000)
+  File "/usr/local/lib/python3.9/configparser.py", line 818, in getint
+    return self._get_conv(section, option, int, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 808, in _get_conv
+    return self._get(section, conv, option, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 803, in _get
+    return conv(self.get(section, option, **kwargs))
+ValueError: invalid literal for int() with base 10: ''
+[2025-07-19T23:40:16.417+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:40:16.442+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.065 seconds
+[2025-07-19T23:40:46.546+0000] {processor.py:157} INFO - Started process (PID=62) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:40:46.547+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:40:46.548+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:40:46.548+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:40:46.582+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:40:46.574+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 8, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 1, in <module>
+    from utils.constants import CLIENT_ID, SECRET
+  File "/opt/airflow/utils/constants.py", line 28, in <module>
+    BATCH_SIZE = parser.getint('etl_settings', 'batch_size', fallback=1000)
+  File "/usr/local/lib/python3.9/configparser.py", line 818, in getint
+    return self._get_conv(section, option, int, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 808, in _get_conv
+    return self._get(section, conv, option, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 803, in _get
+    return conv(self.get(section, option, **kwargs))
+ValueError: invalid literal for int() with base 10: ''
+[2025-07-19T23:40:46.582+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:40:46.604+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.062 seconds
+[2025-07-19T23:41:01.698+0000] {processor.py:157} INFO - Started process (PID=63) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:41:01.699+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:41:01.700+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:41:01.700+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:41:01.770+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:41:01.757+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 8, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 1, in <module>
+    from utils.constants import CLIENT_ID, SECRET
+  File "/opt/airflow/utils/constants.py", line 28, in <module>
+    BATCH_SIZE = parser.getint('etl_settings', 'batch_size', fallback=1000)
+  File "/usr/local/lib/python3.9/configparser.py", line 818, in getint
+    return self._get_conv(section, option, int, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 808, in _get_conv
+    return self._get(section, conv, option, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 803, in _get
+    return conv(self.get(section, option, **kwargs))
+ValueError: invalid literal for int() with base 10: ''
+[2025-07-19T23:41:01.771+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:41:01.808+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.114 seconds
+[2025-07-19T23:41:31.855+0000] {processor.py:157} INFO - Started process (PID=64) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:41:31.856+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:41:31.857+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:41:31.857+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:41:31.908+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:41:31.897+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 8, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 1, in <module>
+    from utils.constants import CLIENT_ID, SECRET
+  File "/opt/airflow/utils/constants.py", line 28, in <module>
+    BATCH_SIZE = parser.getint('etl_settings', 'batch_size', fallback=1000)
+  File "/usr/local/lib/python3.9/configparser.py", line 818, in getint
+    return self._get_conv(section, option, int, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 808, in _get_conv
+    return self._get(section, conv, option, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 803, in _get
+    return conv(self.get(section, option, **kwargs))
+ValueError: invalid literal for int() with base 10: ''
+[2025-07-19T23:41:31.908+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:41:31.938+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.087 seconds
+[2025-07-19T23:41:43.035+0000] {processor.py:157} INFO - Started process (PID=65) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:41:43.035+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:41:43.036+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:41:43.036+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:41:43.079+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:41:43.071+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 8, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 1, in <module>
+    from utils.constants import CLIENT_ID, SECRET
+  File "/opt/airflow/utils/constants.py", line 28, in <module>
+    BATCH_SIZE = parser.getint('etl_settings', 'batch_size', fallback=1000)
+  File "/usr/local/lib/python3.9/configparser.py", line 818, in getint
+    return self._get_conv(section, option, int, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 808, in _get_conv
+    return self._get(section, conv, option, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 803, in _get
+    return conv(self.get(section, option, **kwargs))
+ValueError: invalid literal for int() with base 10: ''
+[2025-07-19T23:41:43.080+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:41:43.102+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.070 seconds
+[2025-07-19T23:41:46.070+0000] {processor.py:157} INFO - Started process (PID=66) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:41:46.071+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:41:46.072+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:41:46.072+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:41:46.120+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:41:46.111+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 8, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 1, in <module>
+    from utils.constants import CLIENT_ID, SECRET
+  File "/opt/airflow/utils/constants.py", line 28, in <module>
+    BATCH_SIZE = parser.getint('etl_settings', 'batch_size', fallback=1000)
+  File "/usr/local/lib/python3.9/configparser.py", line 818, in getint
+    return self._get_conv(section, option, int, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 808, in _get_conv
+    return self._get(section, conv, option, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 803, in _get
+    return conv(self.get(section, option, **kwargs))
+ValueError: invalid literal for int() with base 10: ''
+[2025-07-19T23:41:46.120+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:41:46.144+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.078 seconds
+[2025-07-19T23:42:16.339+0000] {processor.py:157} INFO - Started process (PID=67) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:42:16.340+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:42:16.342+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:42:16.341+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:42:16.385+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:42:16.375+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 8, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 1, in <module>
+    from utils.constants import CLIENT_ID, SECRET
+  File "/opt/airflow/utils/constants.py", line 28, in <module>
+    BATCH_SIZE = parser.getint('etl_settings', 'batch_size', fallback=1000)
+  File "/usr/local/lib/python3.9/configparser.py", line 818, in getint
+    return self._get_conv(section, option, int, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 808, in _get_conv
+    return self._get(section, conv, option, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 803, in _get
+    return conv(self.get(section, option, **kwargs))
+ValueError: invalid literal for int() with base 10: ''
+[2025-07-19T23:42:16.386+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:42:16.410+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.077 seconds
+[2025-07-19T23:42:46.504+0000] {processor.py:157} INFO - Started process (PID=68) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:42:46.505+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:42:46.506+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:42:46.506+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:42:46.545+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:42:46.535+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 8, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 1, in <module>
+    from utils.constants import CLIENT_ID, SECRET
+  File "/opt/airflow/utils/constants.py", line 28, in <module>
+    BATCH_SIZE = parser.getint('etl_settings', 'batch_size', fallback=1000)
+  File "/usr/local/lib/python3.9/configparser.py", line 818, in getint
+    return self._get_conv(section, option, int, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 808, in _get_conv
+    return self._get(section, conv, option, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 803, in _get
+    return conv(self.get(section, option, **kwargs))
+ValueError: invalid literal for int() with base 10: ''
+[2025-07-19T23:42:46.545+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:42:46.566+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.065 seconds
+[2025-07-19T23:43:16.725+0000] {processor.py:157} INFO - Started process (PID=69) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:43:16.726+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:43:16.727+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:43:16.727+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:43:16.770+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:43:16.759+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 8, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 1, in <module>
+    from utils.constants import CLIENT_ID, SECRET
+  File "/opt/airflow/utils/constants.py", line 28, in <module>
+    BATCH_SIZE = parser.getint('etl_settings', 'batch_size', fallback=1000)
+  File "/usr/local/lib/python3.9/configparser.py", line 818, in getint
+    return self._get_conv(section, option, int, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 808, in _get_conv
+    return self._get(section, conv, option, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 803, in _get
+    return conv(self.get(section, option, **kwargs))
+ValueError: invalid literal for int() with base 10: ''
+[2025-07-19T23:43:16.771+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:43:16.796+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.077 seconds
+[2025-07-19T23:43:45.901+0000] {processor.py:157} INFO - Started process (PID=70) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:43:45.901+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:43:45.902+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:43:45.902+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:43:45.955+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:43:45.946+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 8, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 1, in <module>
+    from utils.constants import CLIENT_ID, SECRET
+  File "/opt/airflow/utils/constants.py", line 28, in <module>
+    BATCH_SIZE = parser.getint('etl_settings', 'batch_size', fallback=1000)
+  File "/usr/local/lib/python3.9/configparser.py", line 818, in getint
+    return self._get_conv(section, option, int, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 808, in _get_conv
+    return self._get(section, conv, option, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 803, in _get
+    return conv(self.get(section, option, **kwargs))
+ValueError: invalid literal for int() with base 10: ''
+[2025-07-19T23:43:45.955+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:43:45.979+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.082 seconds
+[2025-07-19T23:44:16.100+0000] {processor.py:157} INFO - Started process (PID=71) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:44:16.101+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:44:16.102+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:44:16.102+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:44:16.138+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:44:16.131+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 8, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 1, in <module>
+    from utils.constants import CLIENT_ID, SECRET
+  File "/opt/airflow/utils/constants.py", line 28, in <module>
+    BATCH_SIZE = parser.getint('etl_settings', 'batch_size', fallback=1000)
+  File "/usr/local/lib/python3.9/configparser.py", line 818, in getint
+    return self._get_conv(section, option, int, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 808, in _get_conv
+    return self._get(section, conv, option, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 803, in _get
+    return conv(self.get(section, option, **kwargs))
+ValueError: invalid literal for int() with base 10: ''
+[2025-07-19T23:44:16.138+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:44:16.161+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.065 seconds
+[2025-07-19T23:44:46.282+0000] {processor.py:157} INFO - Started process (PID=72) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:44:46.283+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:44:46.284+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:44:46.284+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:44:46.322+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:44:46.312+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 8, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 1, in <module>
+    from utils.constants import CLIENT_ID, SECRET
+  File "/opt/airflow/utils/constants.py", line 28, in <module>
+    BATCH_SIZE = parser.getint('etl_settings', 'batch_size', fallback=1000)
+  File "/usr/local/lib/python3.9/configparser.py", line 818, in getint
+    return self._get_conv(section, option, int, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 808, in _get_conv
+    return self._get(section, conv, option, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 803, in _get
+    return conv(self.get(section, option, **kwargs))
+ValueError: invalid literal for int() with base 10: ''
+[2025-07-19T23:44:46.323+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:44:46.346+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.068 seconds
+[2025-07-19T23:45:16.462+0000] {processor.py:157} INFO - Started process (PID=73) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:45:16.463+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:45:16.464+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:45:16.464+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:45:16.503+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:45:16.494+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 8, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 1, in <module>
+    from utils.constants import CLIENT_ID, SECRET
+  File "/opt/airflow/utils/constants.py", line 28, in <module>
+    BATCH_SIZE = parser.getint('etl_settings', 'batch_size', fallback=1000)
+  File "/usr/local/lib/python3.9/configparser.py", line 818, in getint
+    return self._get_conv(section, option, int, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 808, in _get_conv
+    return self._get(section, conv, option, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 803, in _get
+    return conv(self.get(section, option, **kwargs))
+ValueError: invalid literal for int() with base 10: ''
+[2025-07-19T23:45:16.504+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:45:16.525+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.068 seconds
+[2025-07-19T23:45:46.638+0000] {processor.py:157} INFO - Started process (PID=74) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:45:46.639+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:45:46.640+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:45:46.640+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:45:46.679+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:45:46.671+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 8, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 1, in <module>
+    from utils.constants import CLIENT_ID, SECRET
+  File "/opt/airflow/utils/constants.py", line 28, in <module>
+    BATCH_SIZE = parser.getint('etl_settings', 'batch_size', fallback=1000)
+  File "/usr/local/lib/python3.9/configparser.py", line 818, in getint
+    return self._get_conv(section, option, int, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 808, in _get_conv
+    return self._get(section, conv, option, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 803, in _get
+    return conv(self.get(section, option, **kwargs))
+ValueError: invalid literal for int() with base 10: ''
+[2025-07-19T23:45:46.680+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:45:46.701+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.067 seconds
+[2025-07-19T23:46:16.817+0000] {processor.py:157} INFO - Started process (PID=75) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:46:16.817+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:46:16.818+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:46:16.818+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:46:16.873+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:46:16.863+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 8, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 1, in <module>
+    from utils.constants import CLIENT_ID, SECRET
+  File "/opt/airflow/utils/constants.py", line 28, in <module>
+    BATCH_SIZE = parser.getint('etl_settings', 'batch_size', fallback=1000)
+  File "/usr/local/lib/python3.9/configparser.py", line 818, in getint
+    return self._get_conv(section, option, int, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 808, in _get_conv
+    return self._get(section, conv, option, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 803, in _get
+    return conv(self.get(section, option, **kwargs))
+ValueError: invalid literal for int() with base 10: ''
+[2025-07-19T23:46:16.873+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:46:16.894+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.080 seconds
+[2025-07-19T23:46:47.003+0000] {processor.py:157} INFO - Started process (PID=76) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:46:47.004+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:46:47.005+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:46:47.005+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:46:47.044+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:46:47.035+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 8, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 1, in <module>
+    from utils.constants import CLIENT_ID, SECRET
+  File "/opt/airflow/utils/constants.py", line 28, in <module>
+    BATCH_SIZE = parser.getint('etl_settings', 'batch_size', fallback=1000)
+  File "/usr/local/lib/python3.9/configparser.py", line 818, in getint
+    return self._get_conv(section, option, int, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 808, in _get_conv
+    return self._get(section, conv, option, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 803, in _get
+    return conv(self.get(section, option, **kwargs))
+ValueError: invalid literal for int() with base 10: ''
+[2025-07-19T23:46:47.045+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:46:47.065+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.066 seconds
+[2025-07-19T23:47:17.219+0000] {processor.py:157} INFO - Started process (PID=77) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:47:17.219+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:47:17.221+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:47:17.220+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:47:17.254+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:47:17.246+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 8, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 1, in <module>
+    from utils.constants import CLIENT_ID, SECRET
+  File "/opt/airflow/utils/constants.py", line 28, in <module>
+    BATCH_SIZE = parser.getint('etl_settings', 'batch_size', fallback=1000)
+  File "/usr/local/lib/python3.9/configparser.py", line 818, in getint
+    return self._get_conv(section, option, int, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 808, in _get_conv
+    return self._get(section, conv, option, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 803, in _get
+    return conv(self.get(section, option, **kwargs))
+ValueError: invalid literal for int() with base 10: ''
+[2025-07-19T23:47:17.255+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:47:17.275+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.059 seconds
+[2025-07-19T23:47:47.390+0000] {processor.py:157} INFO - Started process (PID=78) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:47:47.391+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:47:47.392+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:47:47.392+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:47:47.427+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:47:47.419+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 8, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 1, in <module>
+    from utils.constants import CLIENT_ID, SECRET
+  File "/opt/airflow/utils/constants.py", line 28, in <module>
+    BATCH_SIZE = parser.getint('etl_settings', 'batch_size', fallback=1000)
+  File "/usr/local/lib/python3.9/configparser.py", line 818, in getint
+    return self._get_conv(section, option, int, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 808, in _get_conv
+    return self._get(section, conv, option, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 803, in _get
+    return conv(self.get(section, option, **kwargs))
+ValueError: invalid literal for int() with base 10: ''
+[2025-07-19T23:47:47.427+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:47:47.448+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.063 seconds
+[2025-07-19T23:48:17.575+0000] {processor.py:157} INFO - Started process (PID=79) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:48:17.576+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:48:17.577+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:48:17.577+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:48:17.610+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:48:17.603+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 8, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 1, in <module>
+    from utils.constants import CLIENT_ID, SECRET
+  File "/opt/airflow/utils/constants.py", line 28, in <module>
+    BATCH_SIZE = parser.getint('etl_settings', 'batch_size', fallback=1000)
+  File "/usr/local/lib/python3.9/configparser.py", line 818, in getint
+    return self._get_conv(section, option, int, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 808, in _get_conv
+    return self._get(section, conv, option, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 803, in _get
+    return conv(self.get(section, option, **kwargs))
+ValueError: invalid literal for int() with base 10: ''
+[2025-07-19T23:48:17.611+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:48:17.630+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.060 seconds
+[2025-07-19T23:48:47.762+0000] {processor.py:157} INFO - Started process (PID=80) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:48:47.762+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:48:47.763+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:48:47.763+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:48:47.801+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:48:47.793+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 8, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 1, in <module>
+    from utils.constants import CLIENT_ID, SECRET
+  File "/opt/airflow/utils/constants.py", line 28, in <module>
+    BATCH_SIZE = parser.getint('etl_settings', 'batch_size', fallback=1000)
+  File "/usr/local/lib/python3.9/configparser.py", line 818, in getint
+    return self._get_conv(section, option, int, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 808, in _get_conv
+    return self._get(section, conv, option, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 803, in _get
+    return conv(self.get(section, option, **kwargs))
+ValueError: invalid literal for int() with base 10: ''
+[2025-07-19T23:48:47.802+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:48:47.827+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.069 seconds
+[2025-07-19T23:49:17.931+0000] {processor.py:157} INFO - Started process (PID=81) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:49:17.931+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:49:17.932+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:49:17.932+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:49:17.966+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:49:17.958+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 8, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 1, in <module>
+    from utils.constants import CLIENT_ID, SECRET
+  File "/opt/airflow/utils/constants.py", line 28, in <module>
+    BATCH_SIZE = parser.getint('etl_settings', 'batch_size', fallback=1000)
+  File "/usr/local/lib/python3.9/configparser.py", line 818, in getint
+    return self._get_conv(section, option, int, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 808, in _get_conv
+    return self._get(section, conv, option, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 803, in _get
+    return conv(self.get(section, option, **kwargs))
+ValueError: invalid literal for int() with base 10: ''
+[2025-07-19T23:49:17.966+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:49:17.986+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.059 seconds
+[2025-07-19T23:49:48.130+0000] {processor.py:157} INFO - Started process (PID=82) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:49:48.131+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:49:48.132+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:49:48.132+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:49:48.165+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:49:48.158+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 8, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 1, in <module>
+    from utils.constants import CLIENT_ID, SECRET
+  File "/opt/airflow/utils/constants.py", line 28, in <module>
+    BATCH_SIZE = parser.getint('etl_settings', 'batch_size', fallback=1000)
+  File "/usr/local/lib/python3.9/configparser.py", line 818, in getint
+    return self._get_conv(section, option, int, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 808, in _get_conv
+    return self._get(section, conv, option, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 803, in _get
+    return conv(self.get(section, option, **kwargs))
+ValueError: invalid literal for int() with base 10: ''
+[2025-07-19T23:49:48.166+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:49:48.198+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.071 seconds
+[2025-07-19T23:50:18.300+0000] {processor.py:157} INFO - Started process (PID=83) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:50:18.301+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:50:18.302+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:50:18.301+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:50:18.340+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:50:18.332+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 8, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 1, in <module>
+    from utils.constants import CLIENT_ID, SECRET
+  File "/opt/airflow/utils/constants.py", line 28, in <module>
+    BATCH_SIZE = parser.getint('etl_settings', 'batch_size', fallback=1000)
+  File "/usr/local/lib/python3.9/configparser.py", line 818, in getint
+    return self._get_conv(section, option, int, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 808, in _get_conv
+    return self._get(section, conv, option, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 803, in _get
+    return conv(self.get(section, option, **kwargs))
+ValueError: invalid literal for int() with base 10: ''
+[2025-07-19T23:50:18.340+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:50:18.362+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.065 seconds
+[2025-07-19T23:50:48.508+0000] {processor.py:157} INFO - Started process (PID=84) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:50:48.509+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:50:48.510+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:50:48.510+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:50:48.552+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:50:48.542+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 8, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 1, in <module>
+    from utils.constants import CLIENT_ID, SECRET
+  File "/opt/airflow/utils/constants.py", line 28, in <module>
+    BATCH_SIZE = parser.getint('etl_settings', 'batch_size', fallback=1000)
+  File "/usr/local/lib/python3.9/configparser.py", line 818, in getint
+    return self._get_conv(section, option, int, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 808, in _get_conv
+    return self._get(section, conv, option, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 803, in _get
+    return conv(self.get(section, option, **kwargs))
+ValueError: invalid literal for int() with base 10: ''
+[2025-07-19T23:50:48.552+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:50:48.578+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.074 seconds
+[2025-07-19T23:51:18.680+0000] {processor.py:157} INFO - Started process (PID=85) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:51:18.680+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:51:18.681+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:51:18.681+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:51:18.715+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:51:18.707+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 8, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 1, in <module>
+    from utils.constants import CLIENT_ID, SECRET
+  File "/opt/airflow/utils/constants.py", line 28, in <module>
+    BATCH_SIZE = parser.getint('etl_settings', 'batch_size', fallback=1000)
+  File "/usr/local/lib/python3.9/configparser.py", line 818, in getint
+    return self._get_conv(section, option, int, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 808, in _get_conv
+    return self._get(section, conv, option, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 803, in _get
+    return conv(self.get(section, option, **kwargs))
+ValueError: invalid literal for int() with base 10: ''
+[2025-07-19T23:51:18.715+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:51:18.736+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.061 seconds
+[2025-07-19T23:51:48.880+0000] {processor.py:157} INFO - Started process (PID=86) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:51:48.881+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:51:48.882+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:51:48.882+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:51:48.917+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:51:48.909+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 8, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 1, in <module>
+    from utils.constants import CLIENT_ID, SECRET
+  File "/opt/airflow/utils/constants.py", line 28, in <module>
+    BATCH_SIZE = parser.getint('etl_settings', 'batch_size', fallback=1000)
+  File "/usr/local/lib/python3.9/configparser.py", line 818, in getint
+    return self._get_conv(section, option, int, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 808, in _get_conv
+    return self._get(section, conv, option, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 803, in _get
+    return conv(self.get(section, option, **kwargs))
+ValueError: invalid literal for int() with base 10: ''
+[2025-07-19T23:51:48.917+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:51:48.941+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.064 seconds
+[2025-07-19T23:52:19.098+0000] {processor.py:157} INFO - Started process (PID=87) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:52:19.099+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:52:19.101+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:52:19.101+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:52:19.152+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:52:19.138+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 8, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 1, in <module>
+    from utils.constants import CLIENT_ID, SECRET
+  File "/opt/airflow/utils/constants.py", line 28, in <module>
+    BATCH_SIZE = parser.getint('etl_settings', 'batch_size', fallback=1000)
+  File "/usr/local/lib/python3.9/configparser.py", line 818, in getint
+    return self._get_conv(section, option, int, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 808, in _get_conv
+    return self._get(section, conv, option, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 803, in _get
+    return conv(self.get(section, option, **kwargs))
+ValueError: invalid literal for int() with base 10: ''
+[2025-07-19T23:52:19.153+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:52:19.199+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.119 seconds
+[2025-07-19T23:52:49.295+0000] {processor.py:157} INFO - Started process (PID=88) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:52:49.297+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:52:49.299+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:52:49.299+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:52:49.351+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:52:49.340+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 8, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 1, in <module>
+    from utils.constants import CLIENT_ID, SECRET
+  File "/opt/airflow/utils/constants.py", line 28, in <module>
+    BATCH_SIZE = parser.getint('etl_settings', 'batch_size', fallback=1000)
+  File "/usr/local/lib/python3.9/configparser.py", line 818, in getint
+    return self._get_conv(section, option, int, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 808, in _get_conv
+    return self._get(section, conv, option, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 803, in _get
+    return conv(self.get(section, option, **kwargs))
+ValueError: invalid literal for int() with base 10: ''
+[2025-07-19T23:52:49.352+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:52:49.407+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.133 seconds
+[2025-07-19T23:53:19.531+0000] {processor.py:157} INFO - Started process (PID=89) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:53:19.532+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:53:19.533+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:53:19.533+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:53:19.610+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:53:19.597+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 8, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 1, in <module>
+    from utils.constants import CLIENT_ID, SECRET
+  File "/opt/airflow/utils/constants.py", line 28, in <module>
+    BATCH_SIZE = parser.getint('etl_settings', 'batch_size', fallback=1000)
+  File "/usr/local/lib/python3.9/configparser.py", line 818, in getint
+    return self._get_conv(section, option, int, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 808, in _get_conv
+    return self._get(section, conv, option, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 803, in _get
+    return conv(self.get(section, option, **kwargs))
+ValueError: invalid literal for int() with base 10: ''
+[2025-07-19T23:53:19.611+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:53:19.665+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.138 seconds
+[2025-07-19T23:53:49.718+0000] {processor.py:157} INFO - Started process (PID=90) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:53:49.719+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:53:49.720+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:53:49.719+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:53:49.755+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:53:49.747+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 8, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 1, in <module>
+    from utils.constants import CLIENT_ID, SECRET
+  File "/opt/airflow/utils/constants.py", line 28, in <module>
+    BATCH_SIZE = parser.getint('etl_settings', 'batch_size', fallback=1000)
+  File "/usr/local/lib/python3.9/configparser.py", line 818, in getint
+    return self._get_conv(section, option, int, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 808, in _get_conv
+    return self._get(section, conv, option, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 803, in _get
+    return conv(self.get(section, option, **kwargs))
+ValueError: invalid literal for int() with base 10: ''
+[2025-07-19T23:53:49.756+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:53:49.781+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.066 seconds
+[2025-07-19T23:54:19.890+0000] {processor.py:157} INFO - Started process (PID=91) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:54:19.891+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:54:19.893+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:54:19.892+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:54:19.942+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:54:19.928+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 8, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 1, in <module>
+    from utils.constants import CLIENT_ID, SECRET
+  File "/opt/airflow/utils/constants.py", line 28, in <module>
+    BATCH_SIZE = parser.getint('etl_settings', 'batch_size', fallback=1000)
+  File "/usr/local/lib/python3.9/configparser.py", line 818, in getint
+    return self._get_conv(section, option, int, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 808, in _get_conv
+    return self._get(section, conv, option, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 803, in _get
+    return conv(self.get(section, option, **kwargs))
+ValueError: invalid literal for int() with base 10: ''
+[2025-07-19T23:54:19.944+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:54:20.012+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.127 seconds
+[2025-07-19T23:54:50.112+0000] {processor.py:157} INFO - Started process (PID=92) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:54:50.113+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:54:50.114+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:54:50.113+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:54:50.166+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:54:50.154+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 8, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 1, in <module>
+    from utils.constants import CLIENT_ID, SECRET
+  File "/opt/airflow/utils/constants.py", line 28, in <module>
+    BATCH_SIZE = parser.getint('etl_settings', 'batch_size', fallback=1000)
+  File "/usr/local/lib/python3.9/configparser.py", line 818, in getint
+    return self._get_conv(section, option, int, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 808, in _get_conv
+    return self._get(section, conv, option, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 803, in _get
+    return conv(self.get(section, option, **kwargs))
+ValueError: invalid literal for int() with base 10: ''
+[2025-07-19T23:54:50.166+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:54:50.197+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.091 seconds
+[2025-07-19T23:55:20.361+0000] {processor.py:157} INFO - Started process (PID=93) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:55:20.363+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:55:20.368+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:55:20.366+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:55:20.419+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:55:20.410+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/reddit_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/reddit_dag.py", line 8, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 1, in <module>
+    from utils.constants import CLIENT_ID, SECRET
+  File "/opt/airflow/utils/constants.py", line 28, in <module>
+    BATCH_SIZE = parser.getint('etl_settings', 'batch_size', fallback=1000)
+  File "/usr/local/lib/python3.9/configparser.py", line 818, in getint
+    return self._get_conv(section, option, int, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 808, in _get_conv
+    return self._get(section, conv, option, raw=raw, vars=vars,
+  File "/usr/local/lib/python3.9/configparser.py", line 803, in _get
+    return conv(self.get(section, option, **kwargs))
+ValueError: invalid literal for int() with base 10: ''
+[2025-07-19T23:55:20.420+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:55:20.468+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.115 seconds
+[2025-07-19T23:55:50.563+0000] {processor.py:157} INFO - Started process (PID=94) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:55:50.564+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:55:50.565+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:55:50.565+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:55:50.891+0000] {processor.py:839} INFO - DAG(s) dict_keys(['etl_reddit_pipeline']) retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:55:51.326+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:55:51.325+0000] {manager.py:499} INFO - Created Permission View: %s
+[2025-07-19T23:55:51.338+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:55:51.337+0000] {manager.py:499} INFO - Created Permission View: %s
+[2025-07-19T23:55:51.344+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:55:51.344+0000] {manager.py:499} INFO - Created Permission View: %s
+[2025-07-19T23:55:51.345+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:55:51.345+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-07-19T23:55:51.363+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:55:51.363+0000] {dag.py:2963} INFO - Creating ORM DAG for etl_reddit_pipeline
+[2025-07-19T23:55:51.379+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:55:51.379+0000] {dag.py:3722} INFO - Setting next_dagrun for etl_reddit_pipeline to 2025-07-19T00:00:00+00:00, run_after=2025-07-20T00:00:00+00:00
+[2025-07-19T23:55:51.408+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.849 seconds
+[2025-07-19T23:56:21.597+0000] {processor.py:157} INFO - Started process (PID=95) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:56:21.598+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:56:21.599+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:56:21.598+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:56:21.703+0000] {processor.py:839} INFO - DAG(s) dict_keys(['etl_reddit_pipeline']) retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:56:21.739+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:56:21.739+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-07-19T23:56:21.762+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:56:21.762+0000] {dag.py:3722} INFO - Setting next_dagrun for etl_reddit_pipeline to 2025-07-19T00:00:00+00:00, run_after=2025-07-20T00:00:00+00:00
+[2025-07-19T23:56:21.782+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.189 seconds
+[2025-07-19T23:56:51.927+0000] {processor.py:157} INFO - Started process (PID=96) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:56:51.928+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:56:51.930+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:56:51.929+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:56:52.059+0000] {processor.py:839} INFO - DAG(s) dict_keys(['etl_reddit_pipeline']) retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:56:52.102+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:56:52.102+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-07-19T23:56:52.168+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:56:52.168+0000] {dag.py:3722} INFO - Setting next_dagrun for etl_reddit_pipeline to 2025-07-19T00:00:00+00:00, run_after=2025-07-20T00:00:00+00:00
+[2025-07-19T23:56:52.206+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.284 seconds
+[2025-07-19T23:57:22.381+0000] {processor.py:157} INFO - Started process (PID=97) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:57:22.382+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:57:22.382+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:57:22.382+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:57:22.493+0000] {processor.py:839} INFO - DAG(s) dict_keys(['etl_reddit_pipeline']) retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:57:22.526+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:57:22.525+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-07-19T23:57:22.587+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:57:22.587+0000] {dag.py:3722} INFO - Setting next_dagrun for etl_reddit_pipeline to 2025-07-19T00:00:00+00:00, run_after=2025-07-20T00:00:00+00:00
+[2025-07-19T23:57:22.626+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.249 seconds
+[2025-07-19T23:57:52.802+0000] {processor.py:157} INFO - Started process (PID=98) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:57:52.803+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:57:52.804+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:57:52.804+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:57:52.935+0000] {processor.py:839} INFO - DAG(s) dict_keys(['etl_reddit_pipeline']) retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:57:52.972+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:57:52.971+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-07-19T23:57:52.999+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:57:52.999+0000] {dag.py:3722} INFO - Setting next_dagrun for etl_reddit_pipeline to 2025-07-19T00:00:00+00:00, run_after=2025-07-20T00:00:00+00:00
+[2025-07-19T23:57:53.019+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.222 seconds
+[2025-07-19T23:57:53.522+0000] {processor.py:157} INFO - Started process (PID=99) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:57:53.523+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:57:53.526+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:57:53.525+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:57:53.687+0000] {processor.py:839} INFO - DAG(s) dict_keys(['etl_reddit_pipeline']) retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:57:53.717+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:57:53.716+0000] {taskinstance.py:1939} ERROR - {'DAG Id': 'etl_reddit_pipeline', 'Task Id': 'reddit_extraction', 'Run Id': 'manual__2025-07-19T23:57:41.736716+00:00', 'Hostname': '84c94c3377fe', 'External Executor Id': 'f5a91866-698a-431b-8dd3-a5f37a0ddb77'}
+[2025-07-19T23:57:53.753+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:57:53.752+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=etl_reddit_pipeline, task_id=reddit_extraction, execution_date=20250719T235741, start_date=20250719T235744, end_date=20250719T235753
+[2025-07-19T23:57:53.768+0000] {processor.py:790} INFO - Executed failure callback for <TaskInstance: etl_reddit_pipeline.reddit_extraction manual__2025-07-19T23:57:41.736716+00:00 [failed]> in state failed
+[2025-07-19T23:57:53.787+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:57:53.786+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-07-19T23:57:53.821+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:57:53.821+0000] {dag.py:3722} INFO - Setting next_dagrun for etl_reddit_pipeline to 2025-07-19T00:00:00+00:00, run_after=2025-07-20T00:00:00+00:00
+[2025-07-19T23:57:53.843+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.327 seconds
+[2025-07-19T23:58:24.021+0000] {processor.py:157} INFO - Started process (PID=100) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:58:24.022+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:58:24.023+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:58:24.023+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:58:24.130+0000] {processor.py:839} INFO - DAG(s) dict_keys(['etl_reddit_pipeline']) retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:58:24.160+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:58:24.160+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-07-19T23:58:24.182+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:58:24.182+0000] {dag.py:3722} INFO - Setting next_dagrun for etl_reddit_pipeline to 2025-07-19T00:00:00+00:00, run_after=2025-07-20T00:00:00+00:00
+[2025-07-19T23:58:24.202+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.186 seconds
+[2025-07-19T23:58:54.361+0000] {processor.py:157} INFO - Started process (PID=101) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:58:54.363+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:58:54.365+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:58:54.364+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:58:54.487+0000] {processor.py:839} INFO - DAG(s) dict_keys(['etl_reddit_pipeline']) retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:58:54.520+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:58:54.519+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-07-19T23:58:54.552+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:58:54.552+0000] {dag.py:3722} INFO - Setting next_dagrun for etl_reddit_pipeline to 2025-07-19T00:00:00+00:00, run_after=2025-07-20T00:00:00+00:00
+[2025-07-19T23:58:54.578+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.220 seconds
+[2025-07-19T23:59:24.740+0000] {processor.py:157} INFO - Started process (PID=102) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:59:24.741+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:59:24.742+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:59:24.742+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:59:24.838+0000] {processor.py:839} INFO - DAG(s) dict_keys(['etl_reddit_pipeline']) retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:59:24.868+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:59:24.868+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-07-19T23:59:24.889+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:59:24.888+0000] {dag.py:3722} INFO - Setting next_dagrun for etl_reddit_pipeline to 2025-07-19T00:00:00+00:00, run_after=2025-07-20T00:00:00+00:00
+[2025-07-19T23:59:24.908+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.171 seconds
+[2025-07-19T23:59:55.068+0000] {processor.py:157} INFO - Started process (PID=103) to work on /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:59:55.069+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-07-19T23:59:55.071+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:59:55.070+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:59:55.188+0000] {processor.py:839} INFO - DAG(s) dict_keys(['etl_reddit_pipeline']) retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-07-19T23:59:55.217+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:59:55.217+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-07-19T23:59:55.243+0000] {logging_mixin.py:151} INFO - [2025-07-19T23:59:55.242+0000] {dag.py:3722} INFO - Setting next_dagrun for etl_reddit_pipeline to 2025-07-19T00:00:00+00:00, run_after=2025-07-20T00:00:00+00:00
+[2025-07-19T23:59:55.264+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.201 seconds
