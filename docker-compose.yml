@@ -32,6 +32,8 @@ services:
       POSTGRES_PORT: 5432
     ports:
       - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
 
   redis:
     image: redis:latest
@@ -57,3 +59,6 @@ services:
   airflow-worker:
     <<: *airflow-common
     command: celery worker
+
+volumes:
+  postgres_data:
