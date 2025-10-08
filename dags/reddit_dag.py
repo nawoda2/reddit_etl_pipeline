@@ -6,8 +6,8 @@ import os
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from pipelines.reddit_pipeline import reddit_pipeline
-
 from pipelines.aws_s3_pipeline import upload_s3_pipeline
+from pipelines.streamlined_sentiment_pipeline import StreamlinedSentimentPipeline
 
 default_args = {
     'owner': 'Nawoda Wijesooriya',
@@ -24,6 +24,12 @@ dag = DAG(
     tags=['reddit', 'etl', 'pipeline']
 )
 
+
+def run_streamlined_sentiment_pipeline():
+    """Run the streamlined sentiment analysis pipeline using S3 as source"""
+    pipeline = StreamlinedSentimentPipeline()
+    results = pipeline.run_full_pipeline(days=30)
+    return results
 
 extract = PythonOperator(
     task_id='reddit_extraction',
@@ -43,5 +49,11 @@ upload_s3 = PythonOperator(
     dag = dag
 )
 
+sentiment_analysis = PythonOperator(
+    task_id='sentiment_analysis',
+    python_callable=run_streamlined_sentiment_pipeline,
+    dag=dag
+)
 
-extract >> upload_s3
+# Task dependencies
+extract >> upload_s3 >> sentiment_analysis

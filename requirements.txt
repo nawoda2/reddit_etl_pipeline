@@ -146,3 +146,22 @@ wrapt==1.15.0
 WTForms==3.1.0
 yarl==1.9.2
 zipp==3.17.0
+
+# Sentiment Analysis and NLP
+transformers==4.35.0
+torch==2.1.0
+vaderSentiment==3.3.2
+spacy==3.7.2
+nltk==3.8.1
+scikit-learn==1.3.2
+
+# Database
+psycopg2-binary==2.9.7
+sqlalchemy==1.4.49
+
+# NBA Data
+nba-api==1.2.1
+requests==2.31.0
+
+# Data Processing
+textblob==0.17.1
