@@ -13,10 +13,10 @@ import os
 # Add project root to path
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from etls.sentiment_analysis import LakersSentimentAnalyzer
-from etls.database_etl import DatabaseManager
-from etls.nba_data_etl import NBADataCollector
-from pipelines.sentiment_performance_pipeline import SentimentPerformancePipeline
+from data_processors.sentiment_analyzer import LakersSentimentAnalyzer
+from data_processors.database_manager import DatabaseManager
+from data_collectors.nba_collector import NBADataCollector
+from data_processors.performance_pipeline import SentimentPerformancePipeline
 
 class TestSentimentAnalysis(unittest.TestCase):
     """Test cases for sentiment analysis functionality"""

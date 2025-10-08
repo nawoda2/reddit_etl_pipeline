@@ -5,9 +5,9 @@ import sys
 import os 
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from pipelines.reddit_pipeline import reddit_pipeline
-from pipelines.aws_s3_pipeline import upload_s3_pipeline
-from pipelines.streamlined_sentiment_pipeline import StreamlinedSentimentPipeline
+from workflows.reddit_workflow import reddit_pipeline
+from workflows.aws_workflow import upload_s3_pipeline
+from data_processors.streamlined_sentiment_pipeline import StreamlinedSentimentPipeline
 
 default_args = {
     'owner': 'Nawoda Wijesooriya',

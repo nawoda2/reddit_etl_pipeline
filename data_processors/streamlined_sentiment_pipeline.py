@@ -1,6 +1,6 @@
 """
-Enhanced Pipeline for Lakers Sentiment Analysis and Performance Correlation
-Integrates Reddit sentiment analysis with NBA player performance data
+Streamlined Sentiment Analysis Pipeline for Lakers Project
+Uses S3 as single source of truth for Reddit data, then processes for sentiment analysis
 """
 
 import pandas as pd
@@ -13,83 +13,75 @@ import os
 # Add project root to path
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from etls.reddit_etl import connect_reddit, extract_posts, transform_data, load_data_to_csv
-from etls.sentiment_analysis import LakersSentimentAnalyzer
-from etls.database_etl import DatabaseManager
-from etls.nba_data_etl import NBADataCollector
-from utils.constants import CLIENT_ID, SECRET, OUTPUT_PATH
+from data_processors.sentiment_analyzer import LakersSentimentAnalyzer
+from data_processors.database_manager import DatabaseManager
+from data_collectors.nba_collector import NBADataCollector
+from data_collectors.s3_reader import S3DataReader
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-class SentimentPerformancePipeline:
+class StreamlinedSentimentPipeline:
     """
-    Main pipeline for Lakers sentiment analysis and performance correlation
+    Streamlined pipeline for Lakers sentiment analysis
+    - Reads Reddit data from S3 (single source of truth)
+    - Performs sentiment analysis
+    - Collects NBA performance data
+    - Stores results in PostgreSQL
+    - Analyzes correlations
     """
     
     def __init__(self):
         self.sentiment_analyzer = LakersSentimentAnalyzer()
         self.db_manager = DatabaseManager()
-        self.nba_collector = NBADataCollector()
+        self.nba_collector = NBADataCollector2025_26()
+        self.s3_reader = S3DataReader()
         
         # Initialize database tables
         self.db_manager.create_tables()
         
-        logger.info("SentimentPerformancePipeline initialized successfully")
+        logger.info("StreamlinedSentimentPipeline initialized successfully")
     
-    def extract_reddit_data(self, subreddit: str = 'lakers', 
-                           time_filter: str = 'day', 
-                           limit: int = 100) -> pd.DataFrame:
+    def read_reddit_data_from_s3(self, days: int = 30) -> pd.DataFrame:
         """
-        Extract Reddit data from Lakers subreddit
+        Read Reddit data from S3 for specified time period
         
         Args:
-            subreddit: Subreddit name
-            time_filter: Time filter for posts
-            limit: Maximum number of posts to extract
+            days: Number of days to look back for data
             
         Returns:
-            DataFrame with Reddit posts
+            DataFrame with Reddit data from S3
         """
         try:
-            logger.info(f"Extracting Reddit data from r/{subreddit}")
+            logger.info(f"Reading Reddit data from S3 for last {days} days")
             
-            # Connect to Reddit
-            reddit_instance = connect_reddit(CLIENT_ID, SECRET, 'lakers_sentiment_analyzer')
+            # Read data from S3
+            df = self.s3_reader.get_reddit_data_for_period(days=days)
             
-            # Extract posts
-            posts = extract_posts(reddit_instance, subreddit, time_filter, limit)
-            
-            if not posts:
-                logger.warning("No posts extracted from Reddit")
+            if df.empty:
+                logger.warning("No Reddit data found in S3 for the specified period")
                 return pd.DataFrame()
             
-            # Convert to DataFrame
-            df = pd.DataFrame(posts)
-            
-            # Transform data
-            df = transform_data(df)
-            
-            logger.info(f"Successfully extracted {len(df)} Reddit posts")
+            logger.info(f"Successfully read {len(df)} Reddit posts from S3")
             return df
             
         except Exception as e:
-            logger.error(f"Failed to extract Reddit data: {e}")
+            logger.error(f"Failed to read Reddit data from S3: {e}")
             return pd.DataFrame()
     
     def analyze_sentiment(self, df: pd.DataFrame) -> pd.DataFrame:
         """
-        Perform sentiment analysis on Reddit data
+        Perform sentiment analysis on Reddit data from S3
         
         Args:
-            df: DataFrame with Reddit posts
+            df: DataFrame with Reddit posts from S3
             
         Returns:
             DataFrame with sentiment analysis results
         """
         try:
-            logger.info("Starting sentiment analysis")
+            logger.info("Starting sentiment analysis on S3 data")
             
             if df.empty:
                 logger.warning("No data to analyze")
@@ -107,7 +99,7 @@ class SentimentPerformancePipeline:
     
     def extract_nba_data(self, days: int = 30) -> pd.DataFrame:
         """
-        Extract NBA player performance data
+        Extract NBA player performance data for 2025-26 Lakers
         
         Args:
             days: Number of days to look back for data
@@ -116,7 +108,7 @@ class SentimentPerformancePipeline:
             DataFrame with NBA player performance data
         """
         try:
-            logger.info(f"Extracting NBA data for last {days} days")
+            logger.info(f"Extracting NBA data for 2025-26 Lakers for last {days} days")
             
             # Get all Lakers player statistics
             nba_df = self.nba_collector.get_all_lakers_player_stats(
@@ -141,7 +133,7 @@ class SentimentPerformancePipeline:
         Store all data in PostgreSQL database
         
         Args:
-            reddit_df: Reddit posts data
+            reddit_df: Reddit posts data from S3
             sentiment_df: Sentiment analysis results
             nba_df: NBA player performance data
             
@@ -153,17 +145,27 @@ class SentimentPerformancePipeline:
             
             success = True
             
-            # Store Reddit posts
+            # Store Reddit posts (only if not already stored)
             if not reddit_df.empty:
-                success &= self.db_manager.insert_reddit_posts(reddit_df)
+                # Check if data already exists to avoid duplicates
+                existing_posts = self.db_manager.get_existing_post_ids(reddit_df['id'].tolist())
+                new_posts = reddit_df[~reddit_df['id'].isin(existing_posts)]
+                
+                if not new_posts.empty:
+                    success &= self.db_manager.insert_reddit_posts(new_posts)
+                    logger.info(f"Stored {len(new_posts)} new Reddit posts")
+                else:
+                    logger.info("No new Reddit posts to store")
             
             # Store sentiment scores
             if not sentiment_df.empty:
                 success &= self.db_manager.insert_sentiment_scores(sentiment_df)
+                logger.info(f"Stored sentiment scores for {len(sentiment_df)} posts")
             
             # Store NBA performance data
             if not nba_df.empty:
                 success &= self.db_manager.insert_player_performance(nba_df)
+                logger.info(f"Stored {len(nba_df)} NBA player performance records")
             
             if success:
                 logger.info("All data stored successfully in database")
@@ -178,7 +180,7 @@ class SentimentPerformancePipeline:
     
     def analyze_correlations(self, days: int = 30) -> Dict[str, Any]:
         """
-        Analyze correlations between sentiment and performance
+        Analyze correlations between sentiment and performance for 2025-26 Lakers
         
         Args:
             days: Number of days to analyze
@@ -187,11 +189,11 @@ class SentimentPerformancePipeline:
             Dictionary with correlation analysis results
         """
         try:
-            logger.info("Analyzing sentiment-performance correlations")
+            logger.info("Analyzing sentiment-performance correlations for 2025-26 Lakers")
             
             correlation_results = {}
             
-            # Get all Lakers players
+            # Get all 2025-26 Lakers players
             for player_key in self.nba_collector.lakers_roster.keys():
                 if self.nba_collector.lakers_roster[player_key]['player_id'] == 1503:
                     continue  # Skip placeholder entries
@@ -295,42 +297,32 @@ class SentimentPerformancePipeline:
             logger.error(f"Failed to generate insights: {e}")
             return {}
     
-    def run_full_pipeline(self, subreddit: str = 'lakers', 
-                         time_filter: str = 'day', 
-                         limit: int = 100,
-                         nba_days: int = 30,
-                         correlation_days: int = 30) -> Dict[str, Any]:
+    def run_full_pipeline(self, days: int = 30) -> Dict[str, Any]:
         """
-        Run the complete sentiment-performance analysis pipeline
+        Run the complete streamlined sentiment-performance analysis pipeline
         
         Args:
-            subreddit: Reddit subreddit to analyze
-            time_filter: Time filter for Reddit posts
-            limit: Maximum number of Reddit posts
-            nba_days: Days of NBA data to collect
-            correlation_days: Days to analyze for correlations
+            days: Number of days to analyze
             
         Returns:
             Dictionary with pipeline results
         """
         try:
-            logger.info("Starting full sentiment-performance analysis pipeline")
+            logger.info("Starting streamlined sentiment-performance analysis pipeline")
             
             pipeline_results = {
                 'pipeline_start_time': datetime.now().isoformat(),
                 'parameters': {
-                    'subreddit': subreddit,
-                    'time_filter': time_filter,
-                    'limit': limit,
-                    'nba_days': nba_days,
-                    'correlation_days': correlation_days
+                    'days': days,
+                    'data_source': 'S3',
+                    'roster': '2025-26 Lakers'
                 },
                 'results': {}
             }
             
-            # Step 1: Extract Reddit data
-            logger.info("Step 1: Extracting Reddit data")
-            reddit_df = self.extract_reddit_data(subreddit, time_filter, limit)
+            # Step 1: Read Reddit data from S3
+            logger.info("Step 1: Reading Reddit data from S3")
+            reddit_df = self.read_reddit_data_from_s3(days)
             pipeline_results['results']['reddit_posts_count'] = len(reddit_df)
             
             # Step 2: Analyze sentiment
@@ -339,8 +331,8 @@ class SentimentPerformancePipeline:
             pipeline_results['results']['sentiment_analysis_count'] = len(sentiment_df)
             
             # Step 3: Extract NBA data
-            logger.info("Step 3: Extracting NBA data")
-            nba_df = self.extract_nba_data(nba_days)
+            logger.info("Step 3: Extracting NBA data for 2025-26 Lakers")
+            nba_df = self.extract_nba_data(days)
             pipeline_results['results']['nba_games_count'] = len(nba_df)
             
             # Step 4: Store data
@@ -350,7 +342,7 @@ class SentimentPerformancePipeline:
             
             # Step 5: Analyze correlations
             logger.info("Step 5: Analyzing correlations")
-            correlation_results = self.analyze_correlations(correlation_days)
+            correlation_results = self.analyze_correlations(days)
             pipeline_results['results']['correlation_analysis'] = correlation_results
             
             # Step 6: Generate insights
@@ -361,7 +353,7 @@ class SentimentPerformancePipeline:
             pipeline_results['pipeline_end_time'] = datetime.now().isoformat()
             pipeline_results['pipeline_success'] = True
             
-            logger.info("Full pipeline completed successfully")
+            logger.info("Streamlined pipeline completed successfully")
             return pipeline_results
             
         except Exception as e:
@@ -375,7 +367,7 @@ class SentimentPerformancePipeline:
     
     def get_player_sentiment_summary(self, player_name: str, days: int = 30) -> Dict[str, Any]:
         """
-        Get comprehensive sentiment summary for a specific player
+        Get comprehensive sentiment summary for a specific 2025-26 Lakers player
         
         Args:
             player_name: Player name key
@@ -411,7 +403,7 @@ class SentimentPerformancePipeline:
     
     def get_all_players_summary(self, days: int = 30) -> Dict[str, Any]:
         """
-        Get summary for all Lakers players
+        Get summary for all 2025-26 Lakers players
         
         Args:
             days: Number of days to analyze
@@ -435,20 +427,38 @@ class SentimentPerformancePipeline:
         except Exception as e:
             logger.error(f"Failed to get all players summary: {e}")
             return {'error': str(e)}
+    
+    def get_s3_data_summary(self, days: int = 30) -> Dict[str, Any]:
+        """
+        Get summary of Reddit data available in S3
+        
+        Args:
+            days: Number of days to analyze
+            
+        Returns:
+            Dictionary with S3 data summary
+        """
+        try:
+            summary = self.s3_reader.get_reddit_data_summary(days)
+            return summary
+            
+        except Exception as e:
+            logger.error(f"Failed to get S3 data summary: {e}")
+            return {'error': str(e)}
 
 
-def test_sentiment_performance_pipeline():
-    """Test function for the sentiment-performance pipeline"""
+def test_streamlined_pipeline():
+    """Test function for the streamlined pipeline"""
     try:
-        print("Testing Sentiment-Performance Pipeline:")
+        print("Testing Streamlined Sentiment Pipeline:")
         print("=" * 50)
         
-        pipeline = SentimentPerformancePipeline()
+        pipeline = StreamlinedSentimentPipeline()
         
-        # Test individual components
-        print("Testing Reddit data extraction...")
-        reddit_df = pipeline.extract_reddit_data(limit=10)
-        print(f"Reddit data extraction: {'PASSED' if not reddit_df.empty else 'FAILED'}")
+        # Test S3 data reading
+        print("Testing S3 data reading...")
+        reddit_df = pipeline.read_reddit_data_from_s3(days=7)
+        print(f"S3 data reading: {'PASSED' if not reddit_df.empty else 'FAILED'}")
         
         if not reddit_df.empty:
             print("Testing sentiment analysis...")
@@ -459,15 +469,15 @@ def test_sentiment_performance_pipeline():
         nba_df = pipeline.extract_nba_data(days=7)
         print(f"NBA data extraction: {'PASSED' if not nba_df.empty else 'FAILED'}")
         
-        print("Testing player sentiment summary...")
-        lebron_summary = pipeline.get_player_sentiment_summary('lebron', days=7)
-        print(f"Player sentiment summary: {'PASSED' if 'error' not in lebron_summary else 'FAILED'}")
+        print("Testing S3 data summary...")
+        s3_summary = pipeline.get_s3_data_summary(days=7)
+        print(f"S3 data summary: {'PASSED' if 'error' not in s3_summary else 'FAILED'}")
         
-        print("Sentiment-Performance Pipeline test completed successfully!")
+        print("Streamlined pipeline test completed successfully!")
         
     except Exception as e:
-        print(f"Sentiment-Performance Pipeline test failed: {e}")
+        print(f"Streamlined pipeline test failed: {e}")
 
 
 if __name__ == "__main__":
-    test_sentiment_performance_pipeline()
+    test_streamlined_pipeline()

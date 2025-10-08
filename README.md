@@ -113,7 +113,7 @@ This project combines social media sentiment analysis with sports analytics to a
 
 7. **Initialize database tables**
    ```bash
-   python -c "from etls.database_etl import DatabaseManager; db = DatabaseManager(); db.create_tables()"
+   python -c "from data_processors.database_manager import DatabaseManager; db = DatabaseManager(); db.create_tables()"
    ```
 
 ### Running the Pipeline
@@ -161,7 +161,7 @@ The test suite covers:
 ### Basic Sentiment Analysis
 
 ```python
-from etls.sentiment_analysis import LakersSentimentAnalyzer
+from data_processors.sentiment_analyzer import LakersSentimentAnalyzer
 
 analyzer = LakersSentimentAnalyzer()
 
@@ -177,7 +177,7 @@ print(f"Mentioned Players: {result['mentioned_players']}")
 ### Player Performance Analysis
 
 ```python
-from etls.nba_data_etl import NBADataCollector
+from data_collectors.nba_collector import NBADataCollector
 
 collector = NBADataCollector()
 
@@ -190,7 +190,7 @@ print(f"Win Percentage: {summary['win_percentage']}")
 ### Full Pipeline Execution
 
 ```python
-from pipelines.sentiment_performance_pipeline import SentimentPerformancePipeline
+from data_processors.performance_pipeline import SentimentPerformancePipeline
 
 pipeline = SentimentPerformancePipeline()
 

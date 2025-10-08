@@ -1,5 +1,5 @@
 from utils.constants import CLIENT_ID, SECRET, OUTPUT_PATH
-from etls.reddit_etl import connect_reddit, extract_posts, transform_data, load_data_to_csv
+from data_collectors.reddit_collector import connect_reddit, extract_posts, transform_data, load_data_to_csv
 import pandas as pd
 
 def reddit_pipeline(file_name: str, subreddit: str, time_filter='day', limit=None):

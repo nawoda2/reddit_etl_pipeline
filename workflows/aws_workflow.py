@@ -1,4 +1,4 @@
-from etls.aws_etl import connect_to_s3, create_bucket_if_not_exist, upload_to_s3
+from data_collectors.aws_s3_client import connect_to_s3, create_bucket_if_not_exist, upload_to_s3
 from utils.constants import AWS_BUCKET_NAME
 
 
