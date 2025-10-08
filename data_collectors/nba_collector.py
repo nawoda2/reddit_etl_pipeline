@@ -17,7 +17,7 @@ logger = logging.getLogger(__name__)
 
 class NBADataCollector:
     """
-    NBA data collector for Lakers player statistics
+    NBA data collector for 2025-26 Lakers player statistics
     Uses multiple data sources for comprehensive player performance data
     """
     
@@ -38,19 +38,14 @@ class NBADataCollector:
         # Lakers team ID
         self.lakers_team_id = 1610612747
         
-        # Current Lakers roster (as of 2024-25 season)
+        # Current Lakers roster (as of 2025-26 season)
         self.lakers_roster = {
-            'lebron': {
-                'full_name': 'LeBron James',
-                'player_id': 2544,
-                'jersey_number': 23,
-                'position': 'SF'
-            },
-            'anthony_davis': {
-                'full_name': 'Anthony Davis',
-                'player_id': 203076,
-                'jersey_number': 3,
-                'position': 'PF'
+            # Starting Lineup
+            'luka_doncic': {
+                'full_name': 'Luka Doncic',
+                'player_id': 1629029,
+                'jersey_number': 77,
+                'position': 'PG'
             },
             'austin_reaves': {
                 'full_name': 'Austin Reaves',
@@ -58,407 +53,119 @@ class NBADataCollector:
                 'jersey_number': 15,
                 'position': 'SG'
             },
-            'dangelo_russell': {
-                'full_name': 'D\'Angelo Russell',
-                'player_id': 1626156,
-                'jersey_number': 1,
-                'position': 'PG'
-            },
-            'russell_westbrook': {
-                'full_name': 'Russell Westbrook',
-                'player_id': 201566,
-                'jersey_number': 0,
-                'position': 'PG'
-            },
-            'kyle_kuzma': {
-                'full_name': 'Kyle Kuzma',
-                'player_id': 1628398,
-                'jersey_number': 0,
-                'position': 'PF'
-            },
-            'brandon_ingram': {
-                'full_name': 'Brandon Ingram',
-                'player_id': 1627742,
-                'jersey_number': 0,
+            'lebron_james': {
+                'full_name': 'LeBron James',
+                'player_id': 2544,
+                'jersey_number': 23,
                 'position': 'SF'
             },
-            'lonzo_ball': {
-                'full_name': 'Lonzo Ball',
-                'player_id': 1628366,
-                'jersey_number': 0,
-                'position': 'PG'
-            },
-            'josh_hart': {
-                'full_name': 'Josh Hart',
-                'player_id': 1628404,
-                'jersey_number': 0,
-                'position': 'SG'
-            },
-            'kentavious_caldwell_pope': {
-                'full_name': 'Kentavious Caldwell-Pope',
-                'player_id': 203484,
-                'jersey_number': 0,
-                'position': 'SG'
-            },
-            'alex_caruso': {
-                'full_name': 'Alex Caruso',
-                'player_id': 1627936,
-                'jersey_number': 0,
-                'position': 'SG'
-            },
-            'jared_dudley': {
-                'full_name': 'Jared Dudley',
-                'player_id': 201162,
-                'jersey_number': 0,
-                'position': 'SF'
-            },
-            'markieff_morris': {
-                'full_name': 'Markieff Morris',
-                'player_id': 202694,
-                'jersey_number': 0,
-                'position': 'PF'
-            },
-            'montrezl_harrell': {
-                'full_name': 'Montrezl Harrell',
-                'player_id': 1626149,
-                'jersey_number': 0,
-                'position': 'C'
-            },
-            'dennis_schroder': {
-                'full_name': 'Dennis Schröder',
-                'player_id': 203471,
-                'jersey_number': 0,
-                'position': 'PG'
-            },
-            'andre_drummond': {
-                'full_name': 'Andre Drummond',
-                'player_id': 203083,
-                'jersey_number': 0,
-                'position': 'C'
-            },
-            'marc_gasol': {
-                'full_name': 'Marc Gasol',
-                'player_id': 201188,
-                'jersey_number': 0,
-                'position': 'C'
-            },
-            'talen_horton_tucker': {
-                'full_name': 'Talen Horton-Tucker',
-                'player_id': 1629659,
-                'jersey_number': 0,
-                'position': 'SG'
-            },
-            'malik_monk': {
-                'full_name': 'Malik Monk',
-                'player_id': 1628370,
-                'jersey_number': 0,
-                'position': 'SG'
-            },
-            'carmelo_anthony': {
-                'full_name': 'Carmelo Anthony',
-                'player_id': 2546,
-                'jersey_number': 0,
-                'position': 'SF'
-            },
-            'dwight_howard': {
-                'full_name': 'Dwight Howard',
-                'player_id': 2730,
-                'jersey_number': 0,
-                'position': 'C'
-            },
-            'rajon_rondo': {
-                'full_name': 'Rajon Rondo',
-                'player_id': 200765,
-                'jersey_number': 0,
-                'position': 'PG'
-            },
-            'jordan_clarkson': {
-                'full_name': 'Jordan Clarkson',
-                'player_id': 203903,
-                'jersey_number': 0,
-                'position': 'SG'
-            },
-            'julius_randle': {
-                'full_name': 'Julius Randle',
-                'player_id': 203944,
-                'jersey_number': 0,
-                'position': 'PF'
-            },
-            'larry_nance_jr': {
-                'full_name': 'Larry Nance Jr.',
-                'player_id': 1626204,
-                'jersey_number': 0,
-                'position': 'PF'
-            },
-            'ivica_zubac': {
-                'full_name': 'Ivica Zubac',
-                'player_id': 1627826,
-                'jersey_number': 0,
-                'position': 'C'
-            },
-            'moe_wagner': {
-                'full_name': 'Moritz Wagner',
-                'player_id': 1629021,
-                'jersey_number': 0,
-                'position': 'C'
-            },
-            'isaac_bonga': {
-                'full_name': 'Isaac Bonga',
+            'rui_hachimura': {
+                'full_name': 'Rui Hachimura',
                 'player_id': 1629067,
-                'jersey_number': 0,
-                'position': 'SF'
-            },
-            'svi_mykhailiuk': {
-                'full_name': 'Sviatoslav Mykhailiuk',
-                'player_id': 1629004,
-                'jersey_number': 0,
-                'position': 'SG'
-            },
-            'moritz_wagner': {
-                'full_name': 'Moritz Wagner',
-                'player_id': 1629021,
-                'jersey_number': 0,
-                'position': 'C'
-            },
-            'jonathan_williams': {
-                'full_name': 'Jonathan Williams',
-                'player_id': 1629147,
-                'jersey_number': 0,
+                'jersey_number': 28,
                 'position': 'PF'
             },
-            'reggie_bullock': {
-                'full_name': 'Reggie Bullock',
-                'player_id': 203493,
-                'jersey_number': 0,
-                'position': 'SF'
-            },
-            'mike_muscala': {
-                'full_name': 'Mike Muscala',
-                'player_id': 203488,
-                'jersey_number': 0,
+            'deandre_ayton': {
+                'full_name': 'Deandre Ayton',
+                'player_id': 203112,
+                'jersey_number': 5,
                 'position': 'C'
             },
-            'tyler_ennis': {
-                'full_name': 'Tyler Ennis',
-                'player_id': 203898,
-                'jersey_number': 0,
+            
+            # Bench Players
+            'marcus_smart': {
+                'full_name': 'Marcus Smart',
+                'player_id': 203935,
+                'jersey_number': 36,
                 'position': 'PG'
             },
-            'corey_brewer': {
-                'full_name': 'Corey Brewer',
-                'player_id': 201147,
-                'jersey_number': 0,
-                'position': 'SF'
-            },
-            'isaiah_thomas': {
-                'full_name': 'Isaiah Thomas',
-                'player_id': 202738,
-                'jersey_number': 0,
+            'gabe_vincent': {
+                'full_name': 'Gabe Vincent',
+                'player_id': 1629216,
+                'jersey_number': 7,
                 'position': 'PG'
             },
-            'channing_frye': {
-                'full_name': 'Channing Frye',
-                'player_id': 101112,
-                'jersey_number': 0,
-                'position': 'C'
-            },
-            'jose_calderon': {
-                'full_name': 'José Calderón',
-                'player_id': 101181,
-                'jersey_number': 0,
+            'bronny_james': {
+                'full_name': 'Bronny James',
+                'player_id': 1631119,
+                'jersey_number': 9,
                 'position': 'PG'
             },
-            'andrew_bogut': {
-                'full_name': 'Andrew Bogut',
-                'player_id': 101106,
-                'jersey_number': 0,
-                'position': 'C'
-            },
-            'luol_deng': {
-                'full_name': 'Luol Deng',
-                'player_id': 2736,
-                'jersey_number': 0,
-                'position': 'SF'
-            },
-            'timofey_mozgov': {
-                'full_name': 'Timofey Mozgov',
-                'player_id': 202389,
-                'jersey_number': 0,
-                'position': 'C'
-            },
-            'jordan_hill': {
-                'full_name': 'Jordan Hill',
-                'player_id': 201941,
-                'jersey_number': 0,
-                'position': 'C'
-            },
-            'nick_young': {
-                'full_name': 'Nick Young',
-                'player_id': 201156,
-                'jersey_number': 0,
-                'position': 'SG'
-            },
-            'steve_blake': {
-                'full_name': 'Steve Blake',
-                'player_id': 2581,
-                'jersey_number': 0,
-                'position': 'PG'
-            },
-            'jodie_meeks': {
-                'full_name': 'Jodie Meeks',
-                'player_id': 201975,
-                'jersey_number': 0,
-                'position': 'SG'
-            },
-            'kendall_marshall': {
-                'full_name': 'Kendall Marshall',
-                'player_id': 203088,
-                'jersey_number': 0,
-                'position': 'PG'
-            },
-            'wesley_johnson': {
-                'full_name': 'Wesley Johnson',
-                'player_id': 202325,
-                'jersey_number': 0,
-                'position': 'SF'
-            },
-            'chris_kaman': {
-                'full_name': 'Chris Kaman',
-                'player_id': 2549,
-                'jersey_number': 0,
-                'position': 'C'
-            },
-            'jordan_farmar': {
-                'full_name': 'Jordan Farmar',
-                'player_id': 200770,
-                'jersey_number': 0,
-                'position': 'PG'
-            },
-            'steve_nash': {
-                'full_name': 'Steve Nash',
-                'player_id': 959,
-                'jersey_number': 0,
-                'position': 'PG'
-            },
-            'pau_gasol': {
-                'full_name': 'Pau Gasol',
-                'player_id': 2200,
-                'jersey_number': 0,
-                'position': 'C'
-            },
-            'metta_world_peace': {
-                'full_name': 'Metta World Peace',
-                'player_id': 1897,
-                'jersey_number': 0,
-                'position': 'SF'
-            },
-            'lamar_odom': {
-                'full_name': 'Lamar Odom',
-                'player_id': 1885,
-                'jersey_number': 0,
+            'jarred_vanderbilt': {
+                'full_name': 'Jarred Vanderbilt',
+                'player_id': 1629020,
+                'jersey_number': 2,
                 'position': 'PF'
             },
-            'derek_fisher': {
-                'full_name': 'Derek Fisher',
-                'player_id': 965,
-                'jersey_number': 0,
-                'position': 'PG'
+            'dalton_knecht': {
+                'full_name': 'Dalton Knecht',
+                'player_id': 1631118,
+                'jersey_number': 4,
+                'position': 'SF'
             },
-            'kobe_bryant': {
-                'full_name': 'Kobe Bryant',
-                'player_id': 977,
-                'jersey_number': 24,
+            'jake_laravia': {
+                'full_name': 'Jake LaRavia',
+                'player_id': 1631117,
+                'jersey_number': 12,
+                'position': 'SF'
+            },
+            'adou_thiero': {
+                'full_name': 'Adou Thiero',
+                'player_id': 1631116,
+                'jersey_number': 1,
+                'position': 'SF'
+            },
+            'jaxson_hayes': {
+                'full_name': 'Jaxson Hayes',
+                'player_id': 1629637,
+                'jersey_number': 11,
+                'position': 'C'
+            },
+            'maxi_kleber': {
+                'full_name': 'Maxi Kleber',
+                'player_id': 1628467,
+                'jersey_number': 14,
+                'position': 'C'
+            },
+            
+            # Two-Way Players
+            'christian_koloko': {
+                'full_name': 'Christian Koloko',
+                'player_id': 1631115,
+                'jersey_number': 10,
+                'position': 'C'
+            },
+            'chris_manon': {
+                'full_name': 'Chris Manon',
+                'player_id': 1631114,
+                'jersey_number': 30,
                 'position': 'SG'
             },
-            'shaquille_oneal': {
-                'full_name': 'Shaquille O\'Neal',
-                'player_id': 406,
-                'jersey_number': 34,
-                'position': 'C'
-            },
-            'robert_horry': {
-                'full_name': 'Robert Horry',
-                'player_id': 109,
-                'jersey_number': 0,
-                'position': 'PF'
-            },
-            'rick_fox': {
-                'full_name': 'Rick Fox',
-                'player_id': 1503,
-                'jersey_number': 0,
-                'position': 'SF'
-            },
-            'brian_shaw': {
-                'full_name': 'Brian Shaw',
-                'player_id': 1117,
-                'jersey_number': 0,
+            
+            # Additional Players
+            'nick_smith_jr': {
+                'full_name': 'Nick Smith Jr.',
+                'player_id': 1631113,
+                'jersey_number': 8,
                 'position': 'PG'
             },
-            'glen_rice': {
-                'full_name': 'Glen Rice',
-                'player_id': 697,
-                'jersey_number': 0,
-                'position': 'SF'
-            },
-            'eddie_jones': {
-                'full_name': 'Eddie Jones',
-                'player_id': 1032,
-                'jersey_number': 0,
+            'nate_williams': {
+                'full_name': 'Nate Williams',
+                'player_id': 1631112,
+                'jersey_number': 19,
                 'position': 'SG'
             },
-            'nick_van_exel': {
-                'full_name': 'Nick Van Exel',
-                'player_id': 1495,
-                'jersey_number': 0,
+            'rj_davis': {
+                'full_name': 'RJ Davis',
+                'player_id': 1631111,
+                'jersey_number': 99,
                 'position': 'PG'
             },
-            'cedric_ceballos': {
-                'full_name': 'Cedric Ceballos',
-                'player_id': 1503,
-                'jersey_number': 0,
-                'position': 'SF'
-            },
-            'vlade_divac': {
-                'full_name': 'Vlade Divac',
-                'player_id': 1503,
-                'jersey_number': 0,
-                'position': 'C'
-            },
-            'james_worthy': {
-                'full_name': 'James Worthy',
-                'player_id': 1503,
-                'jersey_number': 0,
-                'position': 'SF'
-            },
-            'magic_johnson': {
-                'full_name': 'Magic Johnson',
-                'player_id': 1503,
-                'jersey_number': 0,
+            'augustas_marciulionis': {
+                'full_name': 'Augustas Marciulionis',
+                'player_id': 1631110,
+                'jersey_number': 96,
                 'position': 'PG'
-            },
-            'kareem_abdul_jabbar': {
-                'full_name': 'Kareem Abdul-Jabbar',
-                'player_id': 1503,
-                'jersey_number': 0,
-                'position': 'C'
-            },
-            'jerry_west': {
-                'full_name': 'Jerry West',
-                'player_id': 1503,
-                'jersey_number': 0,
-                'position': 'SG'
-            },
-            'elgin_baylor': {
-                'full_name': 'Elgin Baylor',
-                'player_id': 1503,
-                'jersey_number': 0,
-                'position': 'SF'
-            },
-            'wilt_chamberlain': {
-                'full_name': 'Wilt Chamberlain',
-                'player_id': 1503,
-                'jersey_number': 0,
-                'position': 'C'
             }
         }
     
@@ -490,7 +197,7 @@ class NBADataCollector:
             logger.error(f"Unexpected error in API request: {e}")
             return None
     
-    def get_player_game_logs(self, player_id: int, season: str = "2024-25", 
+    def get_player_game_logs(self, player_id: int, season: str = "2025-26", 
                            start_date: Optional[str] = None, 
                            end_date: Optional[str] = None) -> pd.DataFrame:
         """
@@ -498,7 +205,7 @@ class NBADataCollector:
         
         Args:
             player_id: NBA player ID
-            season: NBA season (e.g., "2024-25")
+            season: NBA season (e.g., "2025-26")
             start_date: Start date in YYYY-MM-DD format
             end_date: End date in YYYY-MM-DD format
             
@@ -546,7 +253,7 @@ class NBADataCollector:
             logger.error(f"Failed to get game logs for player {player_id}: {e}")
             return pd.DataFrame()
     
-    def get_team_game_logs(self, team_id: int = None, season: str = "2024-25",
+    def get_team_game_logs(self, team_id: int = None, season: str = "2025-26",
                           start_date: Optional[str] = None,
                           end_date: Optional[str] = None) -> pd.DataFrame:
         """
@@ -605,7 +312,7 @@ class NBADataCollector:
             logger.error(f"Failed to get team game logs for team {team_id}: {e}")
             return pd.DataFrame()
     
-    def get_player_season_stats(self, player_id: int, season: str = "2024-25") -> Dict[str, Any]:
+    def get_player_season_stats(self, player_id: int, season: str = "2025-26") -> Dict[str, Any]:
         """
         Get season statistics for a specific player
         
@@ -675,7 +382,7 @@ class NBADataCollector:
             logger.error(f"Failed to get season stats for player {player_id}: {e}")
             return {}
     
-    def get_all_lakers_player_stats(self, season: str = "2024-25",
+    def get_all_lakers_player_stats(self, season: str = "2025-26",
                                    start_date: Optional[str] = None,
                                    end_date: Optional[str] = None) -> pd.DataFrame:
         """
