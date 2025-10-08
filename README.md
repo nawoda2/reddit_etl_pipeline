@@ -1,21 +1,21 @@
-# Lakers Sentiment Analysis Project
+# Lakers Reddit Sentiment Analysis Pipeline
 
-A comprehensive data pipeline that analyzes sentiment from Lakers subreddit discussions and correlates it with NBA player performance data to uncover insights about fan perception and on-court performance.
+A production-ready data pipeline that extracts sentiment from Lakers subreddit discussions and correlates it with NBA player performance data. This system processes Reddit posts, performs multi-model sentiment analysis, collects NBA statistics, and provides statistical correlation analysis between fan sentiment and on-court performance.
 
-## 🏀 Project Overview
+## Project Overview
 
-This project combines social media sentiment analysis with sports analytics to answer the question: **How does fan sentiment on Reddit correlate with Lakers players' on-court performance?**
+This project addresses the question: **How does fan sentiment on Reddit correlate with Lakers players' actual performance metrics?** The system combines natural language processing, sports analytics, and statistical analysis to provide data-driven insights into the relationship between fan perception and player performance.
 
-### Key Features
+### Core Components
 
-- **Advanced Sentiment Analysis**: Uses multiple NLP models (VADER, TextBlob, RoBERTa) for robust sentiment scoring
-- **Player-Specific Analysis**: Identifies and analyzes sentiment for individual Lakers players
-- **NBA Data Integration**: Collects real-time player performance statistics
-- **Correlation Analysis**: Statistical analysis of sentiment vs performance relationships
-- **Interactive Visualizations**: Dynamic dashboards for data exploration
-- **Scalable Architecture**: Built with Airflow, PostgreSQL, and S3 for production use
+- **Reddit Data Collection**: Automated extraction of posts and comments from r/lakers
+- **Multi-Model Sentiment Analysis**: VADER, TextBlob, and RoBERTa-based sentiment scoring
+- **NBA Data Integration**: Real-time collection of player statistics and game logs
+- **Statistical Correlation Analysis**: Pearson correlation analysis between sentiment and performance
+- **Data Visualization**: Interactive dashboards and trend analysis
+- **Production Orchestration**: Apache Airflow-based workflow management
 
-## 🏗️ Architecture
+## System Architecture
 
 ```
 ┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
@@ -43,148 +43,214 @@ This project combines social media sentiment analysis with sports analytics to a
                     └─────────────────────────┘
 ```
 
-## 📊 Data Flow
+## Data Processing Pipeline
 
-1. **Data Collection**
-   - Reddit posts from r/lakers subreddit
-   - NBA player statistics and game logs
-   - Raw data stored in S3 data lake
+### 1. Data Collection Phase
+- **Reddit Extraction**: Collects posts and comments from r/lakers subreddit using PRAW
+- **NBA Data Collection**: Retrieves player statistics, game logs, and team performance data
+- **Data Validation**: Ensures data quality and completeness before processing
 
-2. **Data Processing**
-   - Text preprocessing and player mention extraction
-   - Multi-model sentiment analysis
-   - Performance data normalization
+### 2. Data Processing Phase
+- **Text Preprocessing**: Cleans and normalizes Reddit text data
+- **Player Mention Detection**: Identifies which Lakers players are mentioned in each post
+- **Sentiment Analysis**: Applies multiple sentiment analysis models for robust scoring
+- **Performance Data Normalization**: Standardizes NBA statistics for analysis
 
-3. **Data Storage**
-   - Processed data stored in PostgreSQL
-   - Structured tables for efficient querying
-   - Historical data retention
+### 3. Data Storage Phase
+- **PostgreSQL Database**: Stores processed data in structured tables
+- **S3 Data Lake**: Archives raw data for historical analysis
+- **Data Indexing**: Optimizes database queries for performance
 
-4. **Analysis & Visualization**
-   - Correlation analysis between sentiment and performance
-   - Interactive dashboards and charts
-   - Automated reporting
+### 4. Analysis Phase
+- **Correlation Analysis**: Statistical analysis of sentiment vs performance relationships
+- **Trend Analysis**: Time-series analysis of sentiment patterns
+- **Visualization**: Interactive charts and dashboards for data exploration
 
-## 🚀 Quick Start
+## Installation and Setup
 
 ### Prerequisites
 
-- Python 3.9+
-- PostgreSQL 12+
-- Apache Airflow 2.7+
-- Docker (optional)
+- Python 3.9 or higher
+- PostgreSQL 12 or higher
+- Apache Airflow 2.7 or higher
+- Docker (optional, for containerized deployment)
 
-### Installation
+### Step-by-Step Installation
 
-1. **Clone the repository**
+1. **Clone the Repository**
    ```bash
-   git clone <repository-url>
-   cd reddit_project
+   git clone https://github.com/your-username/reddit_etl_pipeline.git
+   cd reddit_etl_pipeline
    ```
 
-2. **Create virtual environment**
+2. **Create Python Virtual Environment**
    ```bash
-   python -m venv reddit_env
-   source reddit_env/bin/activate  # On Windows: reddit_env\Scripts\activate
+   python -m venv venv
+   # On Windows:
+   venv\Scripts\activate
+   # On macOS/Linux:
+   source venv/bin/activate
    ```
 
-3. **Install dependencies**
+3. **Install Dependencies**
    ```bash
    pip install -r requirements.txt
    ```
 
-4. **Download spaCy model**
+4. **Download Required NLP Models**
    ```bash
    python -m spacy download en_core_web_sm
    ```
 
-5. **Configure environment**
+5. **Configure Environment Variables**
    ```bash
    cp config/config_template.conf config/config.conf
-   # Edit config.conf with your API keys and database credentials
+   ```
+   
+   Edit `config/config.conf` with your API credentials:
+   ```ini
+   [reddit]
+   client_id = your_reddit_client_id
+   secret = your_reddit_secret
+   user_agent = your_app_name
+   
+   [database]
+   database_host = localhost
+   database_name = airflow_reddit
+   database_port = 5432
+   database_username = postgres
+   database_password = your_password
+   
+   [aws]
+   aws_access_key_id = your_aws_key
+   aws_secret_access_key = your_aws_secret
+   aws_bucket_name = your_bucket_name
+   aws_region = us-east-1
    ```
 
-6. **Set up PostgreSQL database**
+6. **Set Up PostgreSQL Database**
    ```sql
    CREATE DATABASE airflow_reddit;
-   CREATE USER postgres WITH PASSWORD 'postgres';
+   CREATE USER postgres WITH PASSWORD 'your_password';
    GRANT ALL PRIVILEGES ON DATABASE airflow_reddit TO postgres;
    ```
 
-7. **Initialize database tables**
+7. **Initialize Database Schema**
    ```bash
    python -c "from data_processors.database_manager import DatabaseManager; db = DatabaseManager(); db.create_tables()"
    ```
 
-### Running the Pipeline
+## Running the System
 
-1. **Start Airflow**
+### Development Mode
+
+1. **Start Airflow Services**
    ```bash
+   # Terminal 1: Start Airflow Webserver
    airflow webserver --port 8080
+   
+   # Terminal 2: Start Airflow Scheduler
    airflow scheduler
    ```
 
-2. **Trigger the DAG**
-   - Open Airflow UI at http://localhost:8080
-   - Find the `etl_reddit_pipeline` DAG
-   - Click "Trigger DAG"
+2. **Access Airflow UI**
+   - Open http://localhost:8080 in your browser
+   - Default credentials: admin/admin
 
-3. **Run individual components**
+3. **Trigger the Pipeline**
+   - Navigate to the `etl_reddit_pipeline` DAG
+   - Click "Trigger DAG" to start the pipeline
+
+### Production Mode
+
+1. **Docker Deployment**
    ```bash
-   # Test sentiment analysis
-   python etls/sentiment_analysis.py
-   
-   # Test NBA data collection
-   python etls/nba_data_etl.py
-   
-   # Test full pipeline
-   python pipelines/sentiment_performance_pipeline.py
+   docker-compose up -d
    ```
 
-## 🧪 Testing
+2. **Monitor Pipeline Execution**
+   - Check Airflow UI for pipeline status
+   - Monitor logs for any errors or issues
 
-Run the comprehensive test suite:
+## Project Structure
 
-```bash
-python tests/test_sentiment_analysis.py
+```
+reddit_etl_pipeline/
+├── config/                          # Configuration files
+│   ├── config.conf                  # Main configuration file
+│   └── config_template.conf         # Configuration template
+├── data_collectors/                 # Data collection modules
+│   ├── reddit_collector.py          # Reddit data extraction
+│   ├── nba_collector.py             # NBA statistics collection
+│   ├── aws_s3_client.py             # AWS S3 operations
+│   └── s3_reader.py                 # S3 data reading utilities
+├── data_processors/                 # Data processing modules
+│   ├── sentiment_analyzer.py        # Multi-model sentiment analysis
+│   ├── database_manager.py          # Database operations
+│   ├── performance_pipeline.py      # Performance analysis pipeline
+│   └── streamlined_sentiment_pipeline.py  # Optimized sentiment pipeline
+├── workflows/                       # Workflow orchestration
+│   ├── reddit_workflow.py           # Reddit data workflow
+│   ├── aws_workflow.py              # AWS S3 workflow
+│   └── sentiment_workflow.py        # Sentiment analysis workflow
+├── dags/                           # Airflow DAG definitions
+│   └── reddit_dag.py               # Main orchestration DAG
+├── visualization/                   # Data visualization
+│   └── sentiment_dashboard.py      # Interactive dashboard
+├── api/                            # REST API endpoints
+│   └── app.py                      # FastAPI application
+├── tests/                          # Test suite
+│   └── test_sentiment_analysis.py  # Comprehensive tests
+├── utils/                          # Utility functions
+│   └── constants.py                # Configuration constants
+├── data/                           # Data storage
+│   ├── input/                      # Raw data input
+│   └── output/                     # Processed data output
+├── logs/                           # Airflow execution logs
+├── requirements.txt                # Python dependencies
+├── docker-compose.yml              # Docker orchestration
+├── Dockerfile                      # Container definition
+├── Dockerfile.api                  # API container definition
+└── README.md                       # This file
 ```
 
-The test suite covers:
-- Sentiment analysis functionality
-- Database operations
-- NBA data collection
-- Pipeline integration
-- End-to-end workflows
-
-## 📈 Usage Examples
+## Usage Examples
 
 ### Basic Sentiment Analysis
 
 ```python
 from data_processors.sentiment_analyzer import LakersSentimentAnalyzer
 
+# Initialize the analyzer
 analyzer = LakersSentimentAnalyzer()
 
 # Analyze a single text
-result = analyzer.analyze_sentiment_comprehensive(
-    "LeBron James is playing amazing basketball this season!"
-)
+text = "LeBron James is playing amazing basketball this season!"
+result = analyzer.analyze_sentiment_comprehensive(text)
 
-print(f"Sentiment: {result['vader_compound']}")
+print(f"VADER Score: {result['vader_compound']}")
+print(f"TextBlob Polarity: {result['textblob_polarity']}")
 print(f"Mentioned Players: {result['mentioned_players']}")
+print(f"Overall Sentiment: {result['overall_sentiment']}")
 ```
 
-### Player Performance Analysis
+### NBA Data Collection
 
 ```python
 from data_collectors.nba_collector import NBADataCollector
 
+# Initialize the collector
 collector = NBADataCollector()
 
-# Get LeBron's recent performance
-summary = collector.get_player_performance_summary('lebron', days=30)
-print(f"Average Points: {summary['avg_points']}")
-print(f"Win Percentage: {summary['win_percentage']}")
+# Get player performance data
+player_id = 2544  # LeBron James
+game_logs = collector.get_player_game_logs(player_id, season="2025-26")
+
+# Get season statistics
+season_stats = collector.get_player_season_stats(player_id, season="2025-26")
+print(f"Points per Game: {season_stats.get('PTS', 'N/A')}")
+print(f"Rebounds per Game: {season_stats.get('REB', 'N/A')}")
+print(f"Assists per Game: {season_stats.get('AST', 'N/A')}")
 ```
 
 ### Full Pipeline Execution
@@ -192,6 +258,7 @@ print(f"Win Percentage: {summary['win_percentage']}")
 ```python
 from data_processors.performance_pipeline import SentimentPerformancePipeline
 
+# Initialize the pipeline
 pipeline = SentimentPerformancePipeline()
 
 # Run complete analysis
@@ -203,177 +270,172 @@ results = pipeline.run_full_pipeline(
     correlation_days=30
 )
 
-print(f"Analysis completed: {results['pipeline_success']}")
+print(f"Pipeline Status: {results['pipeline_success']}")
+print(f"Posts Processed: {results['posts_processed']}")
+print(f"Correlation Results: {results['correlation_results']}")
 ```
 
-### Data Visualization
+### Database Operations
 
 ```python
-from visualization.sentiment_dashboard import SentimentDashboard
+from data_processors.database_manager import DatabaseManager
 
-dashboard = SentimentDashboard()
+# Initialize database manager
+db = DatabaseManager()
 
-# Create sentiment trend chart
-fig = dashboard.create_sentiment_trend_chart(sentiment_data, 'lebron')
-fig.show()
+# Store sentiment data
+success = db.store_reddit_data_with_sentiment(
+    processed_df, 
+    summary_data, 
+    'lakers', 
+    '2025-01-08'
+)
 
-# Create correlation heatmap
-fig = dashboard.create_correlation_heatmap(correlation_data)
-fig.show()
+# Query historical data
+historical_data = db.get_sentiment_data_by_date_range(
+    start_date='2025-01-01',
+    end_date='2025-01-08'
+)
 ```
 
-## 📊 Key Metrics
+## Configuration Details
 
-### Sentiment Analysis Metrics
-- **VADER Compound Score**: Overall sentiment (-1 to 1)
-- **TextBlob Polarity**: Sentiment polarity (-1 to 1)
-- **TextBlob Subjectivity**: Opinion vs fact (0 to 1)
-- **Transformer Sentiment**: Advanced model classification
+### Reddit API Setup
 
-### Performance Metrics
-- **Points per Game**: Average points scored
-- **Rebounds/Assists**: Key performance indicators
-- **Plus/Minus**: Team impact metric
-- **Win Percentage**: Game outcome correlation
+1. Create a Reddit application at https://www.reddit.com/prefs/apps
+2. Note your client ID and secret
+3. Update `config/config.conf` with your credentials
 
-### Correlation Analysis
-- **Pearson Correlation**: Linear relationship strength
-- **P-value**: Statistical significance
-- **Sample Size**: Data reliability indicator
+### NBA API Configuration
 
-## 🔧 Configuration
-
-### API Keys Required
-
-1. **Reddit API**
-   - Client ID and Secret from Reddit app
-   - User agent string
-
-2. **NBA Stats API**
-   - No authentication required
-   - Rate limiting applied
-
-3. **AWS S3** (Optional)
-   - Access key and secret
-   - Bucket name and region
+- No authentication required
+- Rate limiting: 60 requests per minute
+- Base URL: https://stats.nba.com/stats
 
 ### Database Configuration
 
-```ini
-[database]
-database_host = localhost
-database_name = airflow_reddit
-database_port = 5432
-database_username = postgres
-database_password = postgres
+The system uses PostgreSQL with the following tables:
+- `reddit_posts`: Raw Reddit post data
+- `sentiment_analysis`: Processed sentiment scores
+- `nba_player_stats`: NBA player statistics
+- `correlation_analysis`: Sentiment-performance correlations
+
+### AWS S3 Configuration
+
+- Used for data lake storage
+- Configure bucket name and region
+- Set up IAM credentials with S3 access
+
+## Testing
+
+### Run Test Suite
+
+```bash
+python -m pytest tests/ -v
 ```
 
-## 📁 Project Structure
+### Test Coverage
 
-```
-reddit_project/
-├── config/                 # Configuration files
-│   ├── config.conf        # Main configuration
-│   └── config_template.conf
-├── dags/                  # Airflow DAGs
-│   └── reddit_dag.py     # Main orchestration DAG
-├── etls/                  # ETL modules
-│   ├── reddit_etl.py     # Reddit data extraction
-│   ├── sentiment_analysis.py  # Sentiment analysis
-│   ├── database_etl.py   # Database operations
-│   ├── nba_data_etl.py   # NBA data collection
-│   └── aws_etl.py        # S3 operations
-├── pipelines/             # Data pipelines
-│   ├── reddit_pipeline.py
-│   ├── aws_s3_pipeline.py
-│   └── sentiment_performance_pipeline.py
-├── tests/                 # Test suite
-│   └── test_sentiment_analysis.py
-├── visualization/         # Dashboard and charts
-│   └── sentiment_dashboard.py
-├── utils/                 # Utilities
-│   └── constants.py      # Configuration constants
-├── data/                  # Data storage
-│   └── output/           # CSV outputs
-├── logs/                  # Airflow logs
-├── requirements.txt       # Python dependencies
-├── docker-compose.yml     # Docker setup
-├── Dockerfile            # Container definition
-└── README.md             # This file
+The test suite covers:
+- Sentiment analysis accuracy
+- Database operations
+- NBA data collection
+- Pipeline integration
+- Error handling
+- Data validation
+
+### Manual Testing
+
+```bash
+# Test Reddit data collection
+python -c "from data_collectors.reddit_collector import connect_reddit; print('Reddit connection:', connect_reddit('test', 'test', 'test'))"
+
+# Test NBA data collection
+python -c "from data_collectors.nba_collector import NBADataCollector; collector = NBADataCollector(); print('NBA collector initialized')"
+
+# Test sentiment analysis
+python -c "from data_processors.sentiment_analyzer import LakersSentimentAnalyzer; analyzer = LakersSentimentAnalyzer(); print('Sentiment analyzer initialized')"
 ```
 
-## 🎯 Key Insights
+## Monitoring and Maintenance
 
-### Sentiment Analysis Findings
-- **Multi-model approach** provides more robust sentiment scoring
-- **Player-specific mentions** enable targeted analysis
-- **Context-aware models** (RoBERTa) handle sports terminology better
-- **Temporal analysis** reveals sentiment trends over time
+### Log Monitoring
 
-### Performance Correlation Insights
-- **Strong correlations** found between sentiment and key performance metrics
-- **Win/loss impact** significantly affects fan sentiment
-- **Individual player analysis** reveals unique patterns
-- **Statistical significance** varies by player and metric
+- Airflow logs: `logs/scheduler/` and `logs/dag_processor_manager/`
+- Application logs: Check console output during execution
+- Database logs: Monitor PostgreSQL logs for performance
 
-## 🔮 Future Enhancements
+### Performance Optimization
 
-### Planned Features
-- **Real-time streaming** analysis
-- **Machine learning** prediction models
-- **Social media expansion** (Twitter, Instagram)
-- **Advanced visualizations** (3D charts, animations)
-- **API endpoints** for external access
-- **Mobile dashboard** application
+- Database indexing on frequently queried columns
+- S3 data partitioning by date
+- Airflow task parallelism configuration
+- Memory optimization for large datasets
 
-### Research Opportunities
-- **Causal analysis** of sentiment on performance
-- **Sentiment prediction** models
-- **Cross-team comparisons**
-- **Historical trend analysis**
-- **Fan engagement metrics**
+### Data Quality Checks
 
-## 🤝 Contributing
+- Automated validation of Reddit data completeness
+- NBA API response validation
+- Sentiment score range validation
+- Database constraint enforcement
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests for new functionality
-5. Submit a pull request
+## Troubleshooting
+
+### Common Issues
+
+1. **Reddit API Rate Limiting**
+   - Solution: Implement exponential backoff
+   - Check: Reddit API status and quotas
+
+2. **NBA API Timeouts**
+   - Solution: Increase timeout values
+   - Check: Network connectivity and API status
+
+3. **Database Connection Issues**
+   - Solution: Verify PostgreSQL service status
+   - Check: Connection parameters and credentials
+
+4. **Memory Issues with Large Datasets**
+   - Solution: Implement data chunking
+   - Check: Available system memory
+
+### Debug Mode
+
+Enable debug logging by setting:
+```python
+logging.basicConfig(level=logging.DEBUG)
+```
+
+## Contributing
 
 ### Development Setup
 
-```bash
-# Install development dependencies
-pip install -r requirements-dev.txt
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/new-feature`
+3. Install development dependencies: `pip install -r requirements-dev.txt`
+4. Make your changes
+5. Add tests for new functionality
+6. Run the test suite: `python -m pytest tests/`
+7. Submit a pull request
 
-# Run linting
-flake8 .
-black .
+### Code Style
 
-# Run tests
-pytest tests/
-```
+- Follow PEP 8 guidelines
+- Use type hints for function parameters
+- Write comprehensive docstrings
+- Include unit tests for new features
 
-## 📄 License
+## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License. See the LICENSE file for details.
 
-## 🙏 Acknowledgments
-
-- **Reddit API** for social media data access
-- **NBA Stats API** for player performance data
-- **Hugging Face** for transformer models
-- **Apache Airflow** for workflow orchestration
-- **Plotly** for interactive visualizations
-
-## 📞 Support
+## Support
 
 For questions, issues, or contributions:
 - Create an issue on GitHub
-- Contact: [your-email@example.com]
-- Documentation: [project-wiki-url]
+- Check the documentation in the `docs/` directory
+- Review the troubleshooting section above
 
 ---
 
-**Built with ❤️ for Lakers fans and data enthusiasts**
+**Built for Lakers fans and data science enthusiasts**
