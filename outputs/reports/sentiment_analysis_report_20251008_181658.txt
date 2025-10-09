@@ -1,0 +1,62 @@
+REDDIT SENTIMENT ANALYSIS REPORT (VADER + TRANSFORMER)
+Generated: 2025-10-08 18:16:58
+================================================================================
+
+OVERVIEW
+--------
+Total Posts Analyzed: 24
+Average Post Score: 190.9
+Average Comments per Post: 38.8
+High-Scoring Posts (>100 points): 8
+
+SENTIMENT ANALYSIS RESULTS
+--------------------------
+
+VADER SENTIMENT ANALYSIS:
+  Average Compound Score: 0.200
+  Positive Posts: 9 (37.5%)
+  Negative Posts: 2 (8.3%)
+  Neutral Posts: 13 (54.2%)
+
+TRANSFORMER SENTIMENT ANALYSIS:
+  Positive Posts: 3 (12.5%)
+  Negative Posts: 0 (0.0%)
+  Neutral Posts: 21 (87.5%)
+
+CLASSIFIER COMPARISON
+---------------------
+Vader and Transformer Agreement: 12 posts (50.0%)
+Disagreement: 12 posts (50.0%)
+
+Vader is more sensitive to sentiment changes.
+Transformer provides more balanced classification.
+
+KEY INSIGHTS
+------------
+1. Lakers fans show generally positive sentiment (Vader: 0.200)
+2. Vader and Transformer agree on 50.0% of posts
+3. High-engagement posts (score >100) represent 33.3% of the dataset
+4. Average post engagement: 190.9 points, 38.8 comments
+
+DATA FILES
+----------
+Raw Reddit Data: outputs/raw_data/
+- reddit_data_20251008_172817.csv
+- reddit_data_20251008_172841.csv
+
+Sentiment Analysis Data: outputs/sentiment_data/
+- sentiment_analysis_20251008_181626.csv
+
+API Endpoints: http://127.0.0.1:8001
+- GET /posts - All posts with sentiment data
+- GET /sentiment - Overall sentiment summary
+
+TECHNICAL DETAILS
+-----------------
+- Database: PostgreSQL (AWS RDS)
+- Sentiment Models: Vader, Transformer (RoBERTa)
+- Data Source: r/lakers subreddit
+- Analysis Date: 2025-10-08
+- TextBlob Removed: Simplified to Vader + Transformer only
+
+================================================================================

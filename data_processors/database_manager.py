@@ -8,7 +8,7 @@ import psycopg2
 from sqlalchemy import create_engine, text
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column, Integer, String, Float, DateTime, Text, JSON, Boolean
+from sqlalchemy import Column, Integer, String, Float, DateTime, Text, JSON, Boolean, ForeignKey
 import logging
 from datetime import datetime
 from typing import Dict, List, Optional, Any
@@ -66,14 +66,27 @@ class SentimentScore(Base):
     vader_negative = Column(Float)
     vader_neutral = Column(Float)
     vader_compound = Column(Float)
-    textblob_polarity = Column(Float)
-    textblob_subjectivity = Column(Float)
-    textblob_sentiment = Column(String)
+    # TextBlob columns removed - using only Vader and Transformer
     transformer_positive = Column(Float)
     transformer_negative = Column(Float)
     transformer_neutral = Column(Float)
     transformer_sentiment = Column(String)
     analysis_timestamp = Column(DateTime)
+    created_at = Column(DateTime, default=datetime.utcnow)
+
+class RedditComment(Base):
+    """Reddit comments data model"""
+    __tablename__ = 'reddit_comments'
+    
+    id = Column(String, primary_key=True)  # Reddit comment ID
+    post_id = Column(String, ForeignKey('reddit_posts.id'), nullable=False)  # Foreign key to post
+    author = Column(String)
+    body = Column(Text)
+    score = Column(Integer)
+    created_utc = Column(DateTime)
+    parent_id = Column(String)  # Parent comment ID for nested comments
+    is_submitter = Column(Boolean, default=False)
+    edited = Column(Boolean, default=False)
     created_at = Column(DateTime, default=datetime.utcnow)
 
 class PlayerPerformance(Base):
@@ -236,9 +249,7 @@ class DatabaseManager:
                         vader_negative=float(row.get('vader_negative', 0.0)),
                         vader_neutral=float(row.get('vader_neutral', 1.0)),
                         vader_compound=float(row.get('vader_compound', 0.0)),
-                        textblob_polarity=float(row.get('textblob_polarity', 0.0)),
-                        textblob_subjectivity=float(row.get('textblob_subjectivity', 0.0)),
-                        textblob_sentiment=str(row.get('textblob_sentiment', 'neutral')),
+                        # TextBlob fields removed
                         transformer_positive=float(row.get('transformer_positive', 0.0)),
                         transformer_negative=float(row.get('transformer_negative', 0.0)),
                         transformer_neutral=float(row.get('transformer_neutral', 1.0)),
@@ -329,8 +340,7 @@ class DatabaseManager:
                     DATE(analysis_timestamp) as date,
                     COUNT(*) as mention_count,
                     AVG(vader_compound) as avg_vader_compound,
-                    AVG(textblob_polarity) as avg_textblob_polarity,
-                    AVG(textblob_subjectivity) as avg_textblob_subjectivity,
+                    -- TextBlob fields removed
                     COUNT(CASE WHEN vader_compound > 0.05 THEN 1 END) as positive_mentions,
                     COUNT(CASE WHEN vader_compound < -0.05 THEN 1 END) as negative_mentions,
                     COUNT(CASE WHEN vader_compound BETWEEN -0.05 AND 0.05 THEN 1 END) as neutral_mentions
@@ -531,8 +541,7 @@ class DatabaseManager:
                     player_name,
                     COUNT(*) as total_mentions,
                     AVG(vader_compound) as avg_vader_compound,
-                    AVG(textblob_polarity) as avg_textblob_polarity,
-                    AVG(textblob_subjectivity) as avg_textblob_subjectivity,
+                    -- TextBlob fields removed
                     COUNT(CASE WHEN vader_compound > 0.05 THEN 1 END) as positive_mentions,
                     COUNT(CASE WHEN vader_compound < -0.05 THEN 1 END) as negative_mentions,
                     COUNT(CASE WHEN vader_compound BETWEEN -0.05 AND 0.05 THEN 1 END) as neutral_mentions,
@@ -586,6 +595,134 @@ class DatabaseManager:
         except Exception as e:
             logger.error(f"Failed to get existing post IDs: {e}")
             return []
+
+    def insert_reddit_comments(self, comments_df: pd.DataFrame) -> bool:
+        """
+        Insert Reddit comments into database
+        
+        Args:
+            comments_df: DataFrame containing Reddit comments
+            
+        Returns:
+            Boolean indicating success
+        """
+        try:
+            session = self.Session()
+            
+            for _, row in comments_df.iterrows():
+                comment = RedditComment(
+                    id=row['id'],
+                    post_id=row['post_id'],
+                    author=str(row.get('author', '')),
+                    body=str(row.get('body', '')),
+                    score=int(row.get('score', 0)),
+                    created_utc=row.get('created_utc'),
+                    parent_id=row.get('parent_id', ''),
+                    is_submitter=bool(row.get('is_submitter', False)),
+                    edited=bool(row.get('edited', False))
+                )
+                session.add(comment)
+            
+            session.commit()
+            session.close()
+            logger.info(f"Successfully inserted {len(comments_df)} Reddit comments")
+            return True
+            
+        except Exception as e:
+            logger.error(f"Failed to insert Reddit comments: {e}")
+            if 'session' in locals():
+                session.rollback()
+                session.close()
+            return False
+
+    def get_comments_for_post(self, post_id: str) -> pd.DataFrame:
+        """
+        Get all comments for a specific post
+        
+        Args:
+            post_id: Reddit post ID
+            
+        Returns:
+            DataFrame with comments
+        """
+        try:
+            query = text("""
+                SELECT 
+                    id,
+                    author,
+                    body,
+                    score,
+                    created_utc,
+                    parent_id,
+                    is_submitter,
+                    edited
+                FROM reddit_comments
+                WHERE post_id = :post_id
+                ORDER BY score DESC, created_utc DESC
+            """)
+            
+            with self.engine.connect() as conn:
+                result = conn.execute(query, {"post_id": post_id})
+                df = pd.DataFrame(result.fetchall(), columns=result.keys())
+            
+            return df
+            
+        except Exception as e:
+            logger.error(f"Failed to get comments for post {post_id}: {e}")
+            return pd.DataFrame()
+
+    def get_comment_sentiment_analysis(self, post_id: str) -> pd.DataFrame:
+        """
+        Get sentiment analysis for comments of a specific post
+        
+        Args:
+            post_id: Reddit post ID
+            
+        Returns:
+            DataFrame with comment sentiment analysis
+        """
+        try:
+            # This would require adding sentiment analysis to comments
+            # For now, return basic comment data
+            return self.get_comments_for_post(post_id)
+            
+        except Exception as e:
+            logger.error(f"Failed to get comment sentiment for post {post_id}: {e}")
+            return pd.DataFrame()
+
+
+def store_reddit_data_with_sentiment(processed_df: pd.DataFrame, summary: Dict, subreddit: str, date: str) -> bool:
+    """
+    Store Reddit data with sentiment analysis results in the database
+    
+    Args:
+        processed_df: DataFrame with processed Reddit posts and sentiment scores
+        summary: Summary dictionary with sentiment analysis results
+        subreddit: Name of the subreddit
+        date: Date string in YYYY-MM-DD format
+        
+    Returns:
+        bool: True if successful, False otherwise
+    """
+    try:
+        db_manager = DatabaseManager()
+        
+        # Insert Reddit posts
+        posts_success = db_manager.insert_reddit_posts(processed_df)
+        
+        # Insert sentiment scores
+        sentiment_success = db_manager.insert_sentiment_scores(processed_df)
+        
+        if posts_success and sentiment_success:
+            logger.info(f"Successfully stored {len(processed_df)} Reddit posts with sentiment data")
+            return True
+        else:
+            logger.error("Failed to store Reddit data with sentiment")
+            return False
+            
+    except Exception as e:
+        logger.error(f"Error storing Reddit data with sentiment: {e}")
+        return False
 
 
 def test_database_manager():

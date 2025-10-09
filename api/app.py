@@ -11,11 +11,12 @@ from datetime import datetime, timedelta
 import json
 import os
 import sys
+from sqlalchemy import text
 
 # Add the project root to the path
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from data_processors.database_manager import RedditDatabaseETL
+from data_processors.database_manager import DatabaseManager
 
 app = FastAPI(
     title="Reddit Sentiment Analysis API",
@@ -33,7 +34,7 @@ app.add_middleware(
 )
 
 # Initialize database ETL
-db_etl = RedditDatabaseETL()
+db_etl = DatabaseManager()
 
 # Pydantic models for API responses
 class SentimentSummary(BaseModel):
@@ -67,7 +68,14 @@ class TrendData(BaseModel):
 @app.on_event("startup")
 async def startup_event():
     """Initialize database connection on startup"""
-    if not db_etl.connect():
+    # DatabaseManager already connects automatically in __init__
+    # Just verify the connection is working
+    try:
+        with db_etl.engine.connect() as conn:
+            conn.execute(text("SELECT 1"))
+        print("Database connection verified on startup")
+    except Exception as e:
+        print(f"Database connection failed on startup: {e}")
         raise Exception("Failed to connect to database")
 
 @app.get("/")

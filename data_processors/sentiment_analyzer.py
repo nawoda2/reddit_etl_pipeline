@@ -12,7 +12,7 @@ from datetime import datetime
 
 # Sentiment Analysis Libraries
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
-from textblob import TextBlob
+# TextBlob removed - using only Vader and Transformer
 from transformers import pipeline, AutoTokenizer, AutoModelForSequenceClassification
 import torch
 
@@ -235,41 +235,7 @@ class LakersSentimentAnalyzer:
                 'vader_compound': 0.0
             }
     
-    def analyze_sentiment_textblob(self, text: str) -> Dict[str, float]:
-        """
-        Analyze sentiment using TextBlob
-        
-        Args:
-            text: Text to analyze
-            
-        Returns:
-            Dictionary with sentiment scores
-        """
-        try:
-            blob = TextBlob(text)
-            polarity = blob.sentiment.polarity
-            subjectivity = blob.sentiment.subjectivity
-            
-            # Convert polarity to positive/negative/neutral
-            if polarity > 0.1:
-                sentiment = 'positive'
-            elif polarity < -0.1:
-                sentiment = 'negative'
-            else:
-                sentiment = 'neutral'
-            
-            return {
-                'textblob_polarity': polarity,
-                'textblob_subjectivity': subjectivity,
-                'textblob_sentiment': sentiment
-            }
-        except Exception as e:
-            logger.error(f"TextBlob analysis failed: {e}")
-            return {
-                'textblob_polarity': 0.0,
-                'textblob_subjectivity': 0.0,
-                'textblob_sentiment': 'neutral'
-            }
+    # TextBlob analysis method removed - using only Vader and Transformer
     
     def analyze_sentiment_transformer(self, text: str) -> Dict[str, float]:
         """
@@ -338,9 +304,7 @@ class LakersSentimentAnalyzer:
                 'vader_negative': 0.0,
                 'vader_neutral': 1.0,
                 'vader_compound': 0.0,
-                'textblob_polarity': 0.0,
-                'textblob_subjectivity': 0.0,
-                'textblob_sentiment': 'neutral',
+                # TextBlob fields removed
                 'transformer_positive': 0.0,
                 'transformer_negative': 0.0,
                 'transformer_neutral': 1.0,
@@ -354,18 +318,16 @@ class LakersSentimentAnalyzer:
         # Extract player mentions
         mentioned_players = self.extract_player_mentions(text)
         
-        # Perform sentiment analysis with all methods
+        # Perform sentiment analysis with Vader and Transformer only
         vader_scores = self.analyze_sentiment_vader(preprocessed_text)
-        textblob_scores = self.analyze_sentiment_textblob(preprocessed_text)
         transformer_scores = self.analyze_sentiment_transformer(preprocessed_text)
         
-        # Combine all results
+        # Combine results
         result = {
             'text': text,
             'preprocessed_text': preprocessed_text,
             'mentioned_players': mentioned_players,
             **vader_scores,
-            **textblob_scores,
             **transformer_scores,
             'analysis_timestamp': datetime.now().isoformat()
         }
@@ -440,8 +402,7 @@ class LakersSentimentAnalyzer:
                 'player': player,
                 'total_mentions': len(player_posts),
                 'avg_vader_compound': player_posts['vader_compound'].mean(),
-                'avg_textblob_polarity': player_posts['textblob_polarity'].mean(),
-                'avg_textblob_subjectivity': player_posts['textblob_subjectivity'].mean(),
+                # TextBlob fields removed
                 'positive_mentions': len(player_posts[player_posts['vader_compound'] > 0.05]),
                 'negative_mentions': len(player_posts[player_posts['vader_compound'] < -0.05]),
                 'neutral_mentions': len(player_posts[
@@ -456,6 +417,97 @@ class LakersSentimentAnalyzer:
             player_summaries.append(summary)
         
         return pd.DataFrame(player_summaries)
+
+
+def analyze_reddit_sentiment(df: pd.DataFrame, text_column: str = 'title') -> Tuple[pd.DataFrame, Dict]:
+    """
+    Wrapper function for analyzing Reddit sentiment data
+    
+    Args:
+        df: DataFrame containing Reddit posts
+        text_column: Name of the column containing text to analyze
+        
+    Returns:
+        Tuple of (processed_df, summary_dict)
+    """
+    analyzer = LakersSentimentAnalyzer()
+    
+    # Analyze the dataframe
+    processed_df = analyzer.analyze_dataframe(df, text_column)
+    
+    # Get player sentiment summary
+    player_summary = analyzer.get_player_sentiment_summary(processed_df)
+    
+    # Create overall summary
+    summary = {
+        'total_posts': len(processed_df),
+        'posts_with_sentiment': len(processed_df[processed_df['vader_compound'].notna()]),
+        'average_sentiment': processed_df['vader_compound'].mean(),
+        'positive_posts': len(processed_df[processed_df['vader_compound'] > 0.05]),
+        'negative_posts': len(processed_df[processed_df['vader_compound'] < -0.05]),
+        'neutral_posts': len(processed_df[(processed_df['vader_compound'] >= -0.05) & (processed_df['vader_compound'] <= 0.05)]),
+        'player_summary': player_summary.to_dict('records')
+    }
+    
+    return processed_df, summary
+
+
+def analyze_reddit_sentiment_enhanced(df: pd.DataFrame) -> Tuple[pd.DataFrame, Dict]:
+    """
+    Enhanced sentiment analysis using both title and selftext when available
+    
+    Args:
+        df: DataFrame containing Reddit posts with 'title' and 'selftext' columns
+        
+    Returns:
+        Tuple of (processed_df, summary_dict)
+    """
+    analyzer = LakersSentimentAnalyzer()
+    
+    # Create combined text for analysis
+    def create_analysis_text(row):
+        """Create text for analysis by combining title and selftext"""
+        title = str(row.get('title', '')).strip()
+        selftext = str(row.get('selftext', '')).strip()
+        
+        # If selftext exists and is not empty, combine with title
+        if selftext and selftext != 'nan' and selftext != '':
+            return f"{title} {selftext}"
+        else:
+            # Only use title if no selftext
+            return title
+    
+    # Add combined text column
+    df = df.copy()
+    df['combined_text'] = df.apply(create_analysis_text, axis=1)
+    
+    # Filter out posts with no meaningful text
+    df = df[df['combined_text'].str.len() > 10]  # At least 10 characters
+    
+    if len(df) == 0:
+        return df, {'total_posts': 0, 'posts_with_sentiment': 0, 'average_sentiment': 0.0,
+                   'positive_posts': 0, 'negative_posts': 0, 'neutral_posts': 0, 'player_summary': []}
+    
+    # Analyze using combined text
+    processed_df = analyzer.analyze_dataframe(df, 'combined_text')
+    
+    # Get player sentiment summary
+    player_summary = analyzer.get_player_sentiment_summary(processed_df)
+    
+    # Create overall summary
+    summary = {
+        'total_posts': len(processed_df),
+        'posts_with_sentiment': len(processed_df[processed_df['vader_compound'].notna()]),
+        'average_sentiment': processed_df['vader_compound'].mean(),
+        'positive_posts': len(processed_df[processed_df['vader_compound'] > 0.05]),
+        'negative_posts': len(processed_df[processed_df['vader_compound'] < -0.05]),
+        'neutral_posts': len(processed_df[(processed_df['vader_compound'] >= -0.05) & (processed_df['vader_compound'] <= 0.05)]),
+        'posts_with_selftext': len(df[df['selftext'].str.len() > 10]),
+        'posts_title_only': len(df[df['selftext'].str.len() <= 10]),
+        'player_summary': player_summary.to_dict('records')
+    }
+    
+    return processed_df, summary
 
 
 def test_sentiment_analyzer():
@@ -480,8 +532,7 @@ def test_sentiment_analyzer():
         print(f"Preprocessed: {result['preprocessed_text']}")
         print(f"Mentioned Players: {result['mentioned_players']}")
         print(f"VADER Compound: {result['vader_compound']:.3f}")
-        print(f"TextBlob Polarity: {result['textblob_polarity']:.3f}")
-        print(f"TextBlob Sentiment: {result['textblob_sentiment']}")
+        # TextBlob fields removed
         if 'transformer_sentiment' in result:
             print(f"Transformer Sentiment: {result['transformer_sentiment']}")
         print("-" * 30)

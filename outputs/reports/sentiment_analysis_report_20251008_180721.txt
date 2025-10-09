@@ -1,0 +1,69 @@
+
+REDDIT SENTIMENT ANALYSIS REPORT
+Generated: 2025-10-08 18:07:21
+================================================================================
+
+OVERVIEW
+--------
+Total Posts Analyzed: 14
+Average Post Score: 121.7
+Average Comments per Post: 31.9
+High-Scoring Posts (>100 points): 3
+
+SENTIMENT ANALYSIS RESULTS
+--------------------------
+
+VADER SENTIMENT ANALYSIS:
+  Average Compound Score: 0.094
+  Positive Posts: 6 (42.9%)
+  Negative Posts: 4 (28.6%)
+  Neutral Posts: 4 (28.6%)
+
+TEXTBLOB SENTIMENT ANALYSIS:
+  Average Polarity: -0.008
+  Average Subjectivity: 0.079
+  Positive Posts: 1 (7.1%)
+  Negative Posts: 1 (7.1%)
+  Neutral Posts: 12 (85.7%)
+
+TRANSFORMER SENTIMENT ANALYSIS:
+  Positive Posts: 3 (21.4%)
+  Negative Posts: 2 (14.3%)
+  Neutral Posts: 9 (64.3%)
+
+CLASSIFIER COMPARISON
+---------------------
+Vader is the most sensitive classifier, detecting positive sentiment in 42.9% of posts.
+TextBlob is the most conservative, classifying 85.7% of posts as neutral.
+Transformer provides a balanced approach between the two.
+
+KEY INSIGHTS
+------------
+1. Lakers fans show generally positive sentiment (Vader: 0.094)
+2. Most disagreement occurs between Vader and TextBlob classifiers
+3. High-engagement posts (score >100) represent 21.4% of the dataset
+4. Average post engagement: 121.7 points, 31.9 comments
+
+DATA FILES
+----------
+Raw Reddit Data: outputs/raw_data/
+- reddit_data_20251008_172817.csv
+- reddit_data_20251008_172841.csv
+
+Sentiment Analysis Data: outputs/sentiment_data/
+- sentiment_analysis_20251008_175709.csv
+
+API Endpoints: http://127.0.0.1:8001
+- GET /posts - All posts with sentiment data
+- GET /sentiment - Overall sentiment summary
+- GET /posts/<built-in function id> - Specific post details
+
+TECHNICAL DETAILS
+-----------------
+- Database: PostgreSQL (AWS RDS)
+- Sentiment Models: Vader, TextBlob, Transformer (RoBERTa)
+- Data Source: r/lakers subreddit
+- Analysis Date: 2025-10-08
+- Total Processing Time: ~2-3 minutes per batch
+
+================================================================================

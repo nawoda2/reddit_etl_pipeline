@@ -19,7 +19,7 @@ file_postfix = datetime.now().strftime("%Y%m%d")
 dag = DAG(
     dag_id='etl_reddit_pipeline',
     default_args=default_args,
-    schedule_interval='@daily',
+    schedule='@daily',
     catchup=False,
     tags=['reddit', 'etl', 'pipeline']
 )
@@ -37,7 +37,7 @@ extract = PythonOperator(
     op_kwargs={
         'file_name': f'reddit_{file_postfix}',
         'subreddit': 'lakers',
-        'time_filter': 'day',
+        'time_filter': 'month',
         'limit': 100
     },
     dag=dag
