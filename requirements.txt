@@ -165,3 +165,5 @@ requests==2.31.0
 
 # Data Processing
 textblob==0.17.1
+spacy==3.8.0
+en-core-web-sm==3.8.0
