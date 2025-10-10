@@ -71,8 +71,6 @@ class NBADataCollector:
                 'jersey_number': 5,
                 'position': 'C'
             },
-            
-            # Bench Players
             'marcus_smart': {
                 'full_name': 'Marcus Smart',
                 'player_id': 203935,
@@ -127,8 +125,6 @@ class NBADataCollector:
                 'jersey_number': 14,
                 'position': 'C'
             },
-            
-            # Two-Way Players
             'christian_koloko': {
                 'full_name': 'Christian Koloko',
                 'player_id': 1631115,
@@ -141,8 +137,6 @@ class NBADataCollector:
                 'jersey_number': 30,
                 'position': 'SG'
             },
-            
-            # Additional Players
             'nick_smith_jr': {
                 'full_name': 'Nick Smith Jr.',
                 'player_id': 1631113,

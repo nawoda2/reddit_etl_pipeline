@@ -35,7 +35,7 @@ class StreamlinedSentimentPipeline:
     def __init__(self):
         self.sentiment_analyzer = LakersSentimentAnalyzer()
         self.db_manager = DatabaseManager()
-        self.nba_collector = NBADataCollector2025_26()
+        self.nba_collector = NBADataCollector()
         self.s3_reader = S3DataReader()
         
         # Initialize database tables

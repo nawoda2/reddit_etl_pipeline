@@ -79,10 +79,11 @@ services:
     volumes:
       - ./api:/app
       - ./utils:/app/utils
-      - ./etls:/app/etls
+      - ./workflows:/app/workflows
 
 volumes:
   postgres_data:
+
 
 
 
