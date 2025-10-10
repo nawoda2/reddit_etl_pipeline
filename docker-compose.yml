@@ -11,12 +11,15 @@ x-airflow-common: &airflow-common
     - ./config:/opt/airflow/config
     - ./dags:/opt/airflow/dags
     - ./data:/opt/airflow/data
+    - ./data_collectors:/opt/airflow/data_collectors
+    - ./data_processors:/opt/airflow/data_processors
     - ./etls:/opt/airflow/etls
     - ./logs:/opt/airflow/logs
     - ./pipelines:/opt/airflow/pipelines
     - ./plugins:/opt/airflow/plugins
     - ./tests:/opt/airflow/tests
     - ./utils:/opt/airflow/utils
+    - ./workflows:/opt/airflow/workflows
     - ./api:/opt/airflow/api
     - ./requirements.txt:/opt/airflow/requirements.txt
   depends_on:
