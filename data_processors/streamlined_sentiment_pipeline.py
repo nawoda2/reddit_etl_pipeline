@@ -56,8 +56,35 @@ class StreamlinedSentimentPipeline:
         try:
             logger.info(f"Reading Reddit data from S3 for last {days} days")
             
-            # Read data from S3
-            df = self.s3_reader.get_reddit_data_for_period(days=days)
+            # Read data from S3 using partitioned structure
+            files = self.s3_reader.list_reddit_files_partitioned(days=days)
+            
+            if not files:
+                logger.warning("No Reddit data found in S3 for the specified period")
+                return pd.DataFrame()
+            
+            # Read and combine all files
+            all_data = []
+            for file_key in files:
+                logger.info(f"Reading file: {file_key}")
+                df = self.s3_reader.read_reddit_file(file_key)
+                if not df.empty:
+                    all_data.append(df)
+            
+            if not all_data:
+                logger.warning("No data found in any S3 files")
+                return pd.DataFrame()
+            
+            # Combine all dataframes
+            df = pd.concat(all_data, ignore_index=True)
+            
+            # Remove duplicates based on post ID
+            initial_count = len(df)
+            df = df.drop_duplicates(subset=['id'], keep='first')
+            final_count = len(df)
+            
+            if initial_count != final_count:
+                logger.info(f"Removed {initial_count - final_count} duplicate posts")
             
             if df.empty:
                 logger.warning("No Reddit data found in S3 for the specified period")

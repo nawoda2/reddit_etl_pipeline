@@ -29,12 +29,12 @@ dag = DAG(
 def reddit_extraction_task(**context):
     """Reddit extraction task with imports inside function"""
     # Add path and import inside function to avoid DAG parsing errors
-    sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    sys.path.insert(0, '/opt/airflow')
     from workflows.reddit_workflow import reddit_pipeline
     
     file_name = f'reddit_{file_postfix}'
     subreddit = 'lakers'
-    time_filter = 'month'
+    time_filter = 'day'  # Changed to daily for better partitioning
     limit = 100
     
     return reddit_pipeline(file_name, subreddit, time_filter, limit)
@@ -43,7 +43,7 @@ def reddit_extraction_task(**context):
 def s3_upload_task(**context):
     """S3 upload task with imports inside function"""
     # Add path and import inside function to avoid DAG parsing errors
-    sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    sys.path.insert(0, '/opt/airflow')
     from workflows.aws_workflow import upload_s3_pipeline
     
     # Get file path from previous task
@@ -54,11 +54,21 @@ def s3_upload_task(**context):
 def sentiment_analysis_task(**context):
     """Sentiment analysis task with imports inside function"""
     # Add path and import inside function to avoid DAG parsing errors
-    sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    sys.path.insert(0, '/opt/airflow')
     from data_processors.streamlined_sentiment_pipeline import StreamlinedSentimentPipeline
     
     pipeline = StreamlinedSentimentPipeline()
-    results = pipeline.run_full_pipeline(days=30)
+    results = pipeline.run_full_pipeline(days=7)  # Changed to 7 days for daily pipeline
+    return results
+
+
+def weekly_analytics_task(**context):
+    """Weekly analytics task for comprehensive analysis"""
+    # Add path and import inside function to avoid DAG parsing errors
+    sys.path.insert(0, '/opt/airflow')
+    from workflows.weekly_analytics_workflow import weekly_analytics_pipeline
+    
+    results = weekly_analytics_pipeline(weeks=1)
     return results
 
 
@@ -80,5 +90,12 @@ sentiment_analysis = PythonOperator(
     dag=dag
 )
 
+weekly_analytics = PythonOperator(
+    task_id='weekly_analytics',
+    python_callable=weekly_analytics_task,
+    dag=dag
+)
+
 # Task dependencies
 extract >> upload_s3 >> sentiment_analysis
+sentiment_analysis >> weekly_analytics

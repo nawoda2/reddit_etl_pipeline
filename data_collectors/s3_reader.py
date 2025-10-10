@@ -89,6 +89,56 @@ class S3DataReader:
             logger.error(f"Failed to list Reddit files: {e}")
             return []
     
+    def list_reddit_files_partitioned(self, days: int = 30) -> List[str]:
+        """
+        List Reddit files from partitioned S3 structure
+        
+        Args:
+            days: Number of days to look back
+            
+        Returns:
+            List of S3 keys for Reddit files
+        """
+        try:
+            # Calculate date range
+            end_date = datetime.now()
+            start_date = end_date - timedelta(days=days)
+            
+            logger.info(f"Listing partitioned Reddit files from {start_date.date()} to {end_date.date()}")
+            
+            files = []
+            current_date = start_date
+            
+            # Iterate through each day in the range
+            while current_date <= end_date:
+                year = current_date.year
+                month = current_date.month
+                day = current_date.day
+                
+                # Construct partitioned prefix
+                prefix = f"raw/reddit/year={year:04d}/month={month:02d}/day={day:02d}/"
+                
+                # List objects for this partition
+                response = self.s3_client.list_objects_v2(
+                    Bucket=self.bucket_name,
+                    Prefix=prefix
+                )
+                
+                if 'Contents' in response:
+                    for obj in response['Contents']:
+                        key = obj['Key']
+                        if key.endswith('.csv') and 'reddit' in key.lower():
+                            files.append(key)
+                
+                current_date += timedelta(days=1)
+            
+            logger.info(f"Found {len(files)} partitioned Reddit files in S3")
+            return files
+            
+        except Exception as e:
+            logger.error(f"Failed to list partitioned Reddit files: {e}")
+            return []
+    
     def read_reddit_file(self, file_key: str) -> pd.DataFrame:
         """
         Read a single Reddit file from S3
