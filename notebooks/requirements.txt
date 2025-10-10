@@ -1,7 +1,7 @@
 # Jupyter Notebook Requirements for Database Querying
 jupyter==1.0.0
 notebook==6.5.4
-pandas==2.0.3
+pandas>=2.3.3
 psycopg2-binary==2.9.7
 sqlalchemy==1.4.49
 matplotlib==3.7.2
@@ -9,3 +9,4 @@ seaborn==0.12.2
 plotly==5.15.0
 ipywidgets==8.0.7
 configparser==5.3.0
+numpy>=2.3.3
