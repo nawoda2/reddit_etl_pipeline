@@ -8,6 +8,19 @@ import subprocess
 import sys
 import os
 
+def check_virtual_environment():
+    """Check if we're running in a virtual environment"""
+    in_venv = hasattr(sys, 'real_prefix') or (hasattr(sys, 'base_prefix') and sys.base_prefix != sys.prefix)
+    if in_venv:
+        print(f"✅ Running in virtual environment: {sys.prefix}")
+        return True
+    else:
+        print("⚠️  Not running in a virtual environment")
+        print("   Consider activating your virtual environment first:")
+        print("   - Windows: venv\\Scripts\\activate")
+        print("   - Linux/Mac: source venv/bin/activate")
+        return False
+
 def install_requirements():
     """Install the required packages for the notebook"""
     print("🔧 Installing required packages...")
@@ -35,6 +48,9 @@ def main():
     print("📊 Reddit ETL Pipeline - Database Query Notebook Setup")
     print("=" * 60)
     
+    # Check virtual environment
+    check_virtual_environment()
+    
     # Check if we're in the right directory
     if not os.path.exists("database_query_notebook.ipynb"):
         print("❌ Please run this script from the notebooks directory")
@@ -57,3 +73,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

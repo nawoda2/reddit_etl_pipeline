@@ -1,5 +1,6 @@
-x-airflow-common:
-  &airflow-common
+version: '3.8'
+
+x-airflow-common: &airflow-common
   build:
     context: .
     dockerfile: Dockerfile
@@ -10,16 +11,13 @@ x-airflow-common:
     - ./config:/opt/airflow/config
     - ./dags:/opt/airflow/dags
     - ./data:/opt/airflow/data
-    - ./data_collectors:/opt/airflow/data_collectors
-    - ./data_processors:/opt/airflow/data_processors
     - ./etls:/opt/airflow/etls
     - ./logs:/opt/airflow/logs
     - ./pipelines:/opt/airflow/pipelines
     - ./plugins:/opt/airflow/plugins
     - ./tests:/opt/airflow/tests
     - ./utils:/opt/airflow/utils
-    - ./workflows:/opt/airflow/workflows
-   # - ./airflow.cfg:/opt/airflow/airflow.cfg
+    - ./api:/opt/airflow/api
     - ./requirements.txt:/opt/airflow/requirements.txt
   depends_on:
     - postgres
@@ -65,3 +63,7 @@ services:
 
 volumes:
   postgres_data:
+
+
+
+

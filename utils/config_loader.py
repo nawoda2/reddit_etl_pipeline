@@ -96,3 +96,5 @@ if __name__ == "__main__":
         print(f"Reddit Client ID: {config.get_reddit_config()['client_id']}")
     except Exception as e:
         print(f"❌ Error loading configuration: {e}")
+
+

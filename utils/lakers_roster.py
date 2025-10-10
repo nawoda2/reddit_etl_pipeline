@@ -1,9 +1,3 @@
-"""
-Los Angeles Lakers 2024-2025 Roster Data
-Contains player information for NER matching
-"""
-
-# Current Lakers roster as of 2024-2025 season
 LAKERS_ROSTER = {
     # Guards
     "Luka Dončić": {
