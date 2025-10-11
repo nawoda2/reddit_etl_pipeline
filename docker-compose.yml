@@ -20,7 +20,6 @@ x-airflow-common: &airflow-common
     - ./tests:/opt/airflow/tests
     - ./utils:/opt/airflow/utils
     - ./workflows:/opt/airflow/workflows
-    - ./api:/opt/airflow/api
     - ./requirements.txt:/opt/airflow/requirements.txt
   depends_on:
     - postgres
